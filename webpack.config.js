@@ -1,7 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
+var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 var postCSSConfig = require('./postcss.config')
-
+///////////////////////////////////////////////////////////////////////////////
+const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools'));
+///////////////////////////////////////////////////////////////////////////////
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
@@ -31,7 +34,11 @@ module.exports = {
     {
       test: /node_modules.*\.css$|(\_+\w+\.css$)/,
       loader: 'style!css!postcss'
-    }]
+    },
+    {
+      test: webpackIsomorphicToolsPlugin.regular_expression('images'),
+      loader: 'file?name=images/[name]-[hash].[ext]'
+    },]
   },
   postcss() {
     return postCSSConfig;
