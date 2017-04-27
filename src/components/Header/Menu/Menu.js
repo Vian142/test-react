@@ -1,15 +1,40 @@
+///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
+import _ from 'lodash';
 import styles from './styles.css';
 
+///////////////////////////////////////////////////////////////////////////////
+const menuItems = [{
+    title: 'Главная',
+    url: '/'
+},
+{
+    title: 'Тесты',
+    url: '/'
+},
+{
+    title: 'Материалы',
+    url: '/'
+},
+{
+    title: 'О проекте',
+    url: '/'
+}];
+
+///////////////////////////////////////////////////////////////////////////////
 function Menu() {
-    return <nav>
+    return <nav className={styles.nav}>
         <ul className={styles.navList}>
-            <li className={styles.navItem}>Пункт 1</li>
-            <li className={styles.navItem}>Пункт 2</li>
-            <li className={styles.navItem}>Пункт 3</li>
-            <li className={styles.navItem}>Пункт 4</li>
+            {
+                _.map(menuItems, (item, index) => <li key={index} className={styles.navItem}>
+                        <a href={item.url} className={styles.navLink}>{item.title}</a>
+                    </li>)
+            }
         </ul>
     </nav>;
 }
 
+///////////////////////////////////////////////////////////////////////////////
 export default Menu;
+
+///////////////////////////////////////////////////////////////////////////////

@@ -1,3 +1,32 @@
-.header {
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '../../theme/_typography.css';
+@import '../../theme/_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.main-header {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.header-wrapper {
     display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+}
+
+.logo-wrapper {
+    display: block;
+    max-width:  300px;
+}
+
+.menu-wrapper {
+    padding-top: 15px;
+}
+
+.auth-wrapper {
+    display: block;
+    padding-top: 5px;
 }

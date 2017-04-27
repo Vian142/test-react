@@ -1,0 +1,36 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '../../../theme/_typography.css';
+@import '../../../theme/_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.nav {
+    display: block;
+    max-width: 450px;
+}
+.nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+.nav-item {
+    display: block;
+    padding: 5px 12px;
+}
+.nav-link {
+    display: inline-block;
+    padding: 5px 0 10px;
+    font-family: var(--font-normal);
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        border-bottom-color: var(--dark);
+    }
+}

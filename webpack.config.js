@@ -34,11 +34,28 @@ module.exports = {
     {
       test: /node_modules.*\.css$|(\_+\w+\.css$)/,
       loader: 'style!css!postcss'
-    },
-    {
+    }, {
+      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/font-woff'
+    }, {
+      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/font-woff'
+    }, {
+      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/octet-stream'
+    }, {
+      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'file?name=fonts/[name]-[hash].[ext]'
+    }, {
+      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=image/svg+xml'
+    }, {
+      test: /\.ico$/,
+      loader: 'file?name=images/[name].[ext]'
+    }, {
       test: webpackIsomorphicToolsPlugin.regular_expression('images'),
       loader: 'file?name=images/[name]-[hash].[ext]'
-    },]
+    }]
   },
   postcss() {
     return postCSSConfig;
