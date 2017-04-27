@@ -1,0 +1,20 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '../../../theme/_typography.css';
+@import '../../../theme/_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.auth-block {
+    display: block;
+}
+.non-auth-block {
+    display: block;
+}
+.non-auth-link {
+    display: inline-block;
+    font-family: 'Tahoma';
+    font-size: 14px;
+    font-weight: normal;
+    &:hover {
+        cursor: pointer;
+    }
+}
