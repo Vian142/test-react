@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import 'normalize.css';
+import 'font-awesome/css/font-awesome.css';
 import Main from './Main/Main';
-
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 

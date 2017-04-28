@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
@@ -5,12 +6,16 @@ var postCSSConfig = require('./postcss.config')
 ///////////////////////////////////////////////////////////////////////////////
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools'));
 ///////////////////////////////////////////////////////////////////////////////
+const isHot = !!process.env.HOT;
+
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './src/client'
-  ],
+  entry: {
+    bundle: _.compact([
+      isHot && 'webpack-hot-middleware/client',
+      path.join(__dirname, '/src/client')
+    ])
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -27,7 +32,7 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loader: 'style!css?camelCase&sourceMap&modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss',
+      loader: 'style!css?camelCase&sourceMap&modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss?sourceMap',
       exclude: /node_modules.*\.css$|(\_+\w+\.css$)/,
       include: path.join(__dirname, './src')
     },
@@ -57,7 +62,23 @@ module.exports = {
       loader: 'file?name=images/[name]-[hash].[ext]'
     }]
   },
-  postcss() {
-    return postCSSConfig;
+  postcss(bundler) {
+    return {
+      plugins: [
+        /* autoprefix for different browser vendors */
+        require('autoprefixer'),
+        /* reset inherited rules */
+        require('postcss-initial')({
+          reset: 'inherited' // reset only inherited rules
+        }),
+        /* enable css @imports like Sass/Less */
+        require('postcss-nested'),
+        require('postcss-import')({
+          root: path.join(__dirname, '..'),
+          path: ['src/theme'],
+          addDependencyTo: bundler
+        })
+      ]
+    }
   }
 };
