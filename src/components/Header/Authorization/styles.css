@@ -10,6 +10,7 @@
 
 .auth-block {
     display: block;
+    position: relative;
 }
 .non-auth-block {
     display: block;
@@ -56,11 +57,47 @@
 
 .control-btn-auth {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
     text-align: center;
-    line-height: 10px;
+    line-height: 20px;
     &:hover {
         cursor: pointer;
+    }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.dropdown-wrapper {
+    display: block;
+    background-color: var(--white);
+    box-sizing: border-box;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    transform: translate(0, 100%);
+}
+
+.dropdown {
+    display: block;
+    width: 130px;
+    padding: 7px 13px;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+}
+
+.dropdown-item {
+    display: block;
+}
+.dropdown-item-link {
+    display: inline-block;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--dark);
+    font-weight: normal;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 }
