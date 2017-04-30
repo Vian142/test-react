@@ -1,0 +1,59 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '../../../theme/_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper {
+    display: block;
+    position: relative;
+}
+.container {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-container {
+    display: block;
+    position: relative;
+}
+
+.columns-block {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    .left-block {
+        display: block;
+        flex: 0 0 45%;
+    }
+    .right-block {
+        display: block;
+        flex: 1 1 50%;
+    }
+}
+
+.picture-content {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    &-image {
+        displa: block;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.content-block {
+    display: block;
+    padding: 0 45px;
+    &-text {
+        display: block;
+    }
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.statistics-block {
+    display: block;
+    background-color: #ececec;
+}
+.statistics-block-wrapper {
+    display: block;
+}

@@ -1,22 +1,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import 'normalize.css';
-import 'font-awesome/css/font-awesome.css';
-import Main from './Main/Main';
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+import classnames from 'classnames';
+import styles from './styles.css'
 
 ///////////////////////////////////////////////////////////////////////////////
-function App(props) {
-  const { children } = props;
-  return <div>
-    <Header />
-    <Main/>
-    <Footer />
-  </div>;
+function Button(props) {
+    const { children, size, bg, color, style = null } = props;
+    return <span className={classnames(styles.btn, style)}>
+        {children}
+    </span>
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-export default App;
+export default Button;
 
 ///////////////////////////////////////////////////////////////////////////////

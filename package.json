@@ -29,6 +29,7 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.0.15",
+    "classnames": "^2.2.5",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^1.10.3",
@@ -70,6 +71,7 @@
     "extends": "airbnb-base"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "normalize.css": "^6.0.0",
     "react": "^15.3.1",

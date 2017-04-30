@@ -8,7 +8,7 @@ var FontAwesome = require('react-fontawesome');
 const Authorization = React.createClass({
     getInitialState(){
         return {
-            shown: true,
+            shown: false,
             authorized: false
         }
     },
