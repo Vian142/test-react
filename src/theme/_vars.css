@@ -1,6 +1,7 @@
 :root {
   /* fonts */
   --font-normal: 'Arial', sans-serif;
+  --font-light: 'Arial', sans-serif;
   /* colors */
   --dark: #333;
   --white: #fff;
