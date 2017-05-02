@@ -1,10 +1,10 @@
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import classnames from 'classnames';
 import Button from '../../common/Button/Button';
-import styles from './styles.css'
+import styles from './styles.css';
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 function MainPage() {
     return <div className={styles.mainWrapper}>
         <section className={classnames(styles.sectionContainer, styles.container)}>
@@ -36,7 +36,7 @@ function MainPage() {
                                     url={'/'}
                                     type={'link'}
                                     size={'big'}
-                                    >
+                                >
                                     Подробнее
                                 </Button>
                             </p>
@@ -92,14 +92,21 @@ function MainPage() {
                         <img
                             src="http://lorempixel.com/g/500/400"
                             alt="Изображение" className={styles.pictureContentImage} />
-                    </div>                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className={classnames(styles.sectionContainer)}>
+            <div className={classnames(styles.textBlock)}>
+                <div className={styles.textBlockTitle}>
+                    Найдите любой подходящий тест для себя
                 </div>
             </div>
         </section>
     </div>;
 }
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 export default MainPage;
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////

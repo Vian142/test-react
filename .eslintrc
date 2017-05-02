@@ -1,16 +1,33 @@
 {
-  "parser": "babel-eslint",
-  "extends": "google",
-  "env": {
-    "commonjs": true,
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "rules": {
-    "max-len": [1, 120, 4, {"ignoreComments": true}]
-  },
-  "plugins": [
-    "react"
-  ]
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "plugins": [
+        "import",
+        "react",
+        "jsx-a11y"
+    ],
+    "env": {
+        "commonjs": true,
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "react/require-render-return": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "max-len": [
+            1,
+            120,
+            4,
+            {
+                "ignoreComments": true
+            }
+        ]
+    }
 }

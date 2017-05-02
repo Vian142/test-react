@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './styles.css';
 import Menu from './Menu/Menu';
-import Authorization from './Authorization/Authorization'
+import Authorization from './Authorization/Authorization';
 
 ///////////////////////////////////////////////////////////////////////////////
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
             </div>
         </div>
     </div>
-};
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 export default Header;

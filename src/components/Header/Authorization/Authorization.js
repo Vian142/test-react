@@ -1,47 +1,46 @@
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import styles from './styles.css'
-var FontAwesome = require('react-fontawesome');
+import styles from './styles.css';
+import { FontAwesome } from 'react-fontawesome';
 
-
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 const Authorization = React.createClass({
-    getInitialState(){
-        return {
-            shown: false,
-            authorized: false
-        }
-    },
-    toogleDropdown() {
-        this.setState({
-            shown: !this.state.shown
-        });
-    },
-    render() {
-        const {shown, authorized} = this.state;
-        return (
+  getInitialState() {
+    return {
+      shown: false,
+      authorized: false,
+    };
+  },
+  toogleDropdown() {
+    this.setState({
+      shown: !this.state.shown,
+    });
+  },
+  render() {
+    const { shown, authorized } = this.state;
+    return (
             <div className={styles.authBlock}>
                 {
                     (authorized) ? <div className={styles.nonAuthBlock}>
                         <span className={styles.nonAuthLink}>Регистрация</span>
-                        <br/>
+                        <br />
                         <span className={styles.nonAuthLink}>Авторизация</span>
-                    </div> : <ViewAuthorized shown={shown} showDropdown={this.toogleDropdown}/>
+                    </div> : <ViewAuthorized shown={shown} showDropdown={this.toogleDropdown} />
                 }
                 {
-                    shown && <DropdownContent/>
+                    shown && <DropdownContent />
                 }
             </div>
-        );
-    }
+    );
+  },
 });
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 function ViewAuthorized(props) {
-    const { shown, showDropdown } = props;
-    return <div className={styles.authUser}>
+  const { shown, showDropdown } = props;
+  return <div className={styles.authUser}>
         <div className={styles.authUserAvatar}>
-            <img src='http://placehold.it/100x100' className={styles.userAvatarImage}/>
+            <img src="http://placehold.it/100x100" className={styles.userAvatarImage} />
         </div>
         <div className={styles.authUserInfo}>
             <span className={styles.authUserInfoItem}>Иван</span>
@@ -49,27 +48,27 @@ function ViewAuthorized(props) {
         </div>
         <div className={styles.controlsBlock}>
             <FontAwesome
-                name={(shown)? 'caret-up' : 'caret-down'}
+                name={(shown) ? 'caret-up' : 'caret-down'}
                 className={styles.controlBtnAuth}
-                onClick={() => showDropdown()}/>
+                onClick={() => showDropdown()} />
         </div>
-    </div>
+    </div>;
 }
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 function DropdownContent() {
-    return <div className={styles.dropdownWrapper}>
+  return <div className={styles.dropdownWrapper}>
         <div className={styles.dropdown}>
             <div className={styles.dropdownItem}>
-                <a href='/' className={styles.dropdownItemLink}>Профиль</a>
+                <a href="/" className={styles.dropdownItemLink}>Профиль</a>
             </div>
             <div className={styles.dropdownItem}>
-                <a href='/' className={styles.dropdownItemLink}>Выйти</a>
+                <a href="/" className={styles.dropdownItemLink}>Выйти</a>
             </div>
         </div>
     </div>;
 }
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////
 export default Authorization;
 
-///////////////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////////

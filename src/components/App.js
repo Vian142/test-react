@@ -7,11 +7,10 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
 ///////////////////////////////////////////////////////////////////////////////
-function App(props) {
-  const { children } = props;
+function App() {
   return <div>
     <Header />
-    <Main/>
+    <Main />
     <Footer />
   </div>;
 }
