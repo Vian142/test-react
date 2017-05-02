@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import styles from './styles.css';
 
 // /////////////////////////////////////////////////////////////////////////////
-function Button() {
-  const { children, url, type, size, style = null } = this.props;
+function Button(props) {
+  const { children, url, type, size, style = null } = props;
   return <span
     className={classnames(styles.btn,
       (size === 'small') && styles.btnSmall,

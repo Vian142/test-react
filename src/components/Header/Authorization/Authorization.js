@@ -1,24 +1,60 @@
 // /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
+import createReactClass from 'create-react-class';
 import styles from './styles.css';
-import { FontAwesome } from 'react-fontawesome';
+import FontAwesome from 'react-fontawesome';
 
 // /////////////////////////////////////////////////////////////////////////////
-const Authorization = React.createClass({
-  getInitialState() {
-    return {
-      shown: false,
-      authorized: false,
-    };
-  },
-  toogleDropdown() {
-    this.setState({
-      shown: !this.state.shown,
-    });
-  },
-  render() {
-    const { shown, authorized } = this.state;
+function ViewAuthorized(props) {
+    const { shown = false, showDropdown } = props;
     return (
+        <div className={styles.authUser}>
+            <div className={styles.authUserAvatar}>
+                <img src="http://placehold.it/100x100" className={styles.userAvatarImage} />
+            </div>
+            <div className={styles.authUserInfo}>
+                <span className={styles.authUserInfoItem}>Иван</span>
+                <span className={styles.authUserInfoItem}>Иванович</span>
+            </div>
+            <div className={styles.controlsBlock}>
+                <FontAwesome
+                    name={(shown) ? 'caret-up' : 'caret-down'}
+                    className={styles.controlBtnAuth}
+                    onClick={() => showDropdown()} />
+            </div>
+        </div>
+    );
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+function DropdownContent() {
+    return <div className={styles.dropdownWrapper}>
+        <div className={styles.dropdown}>
+            <div className={styles.dropdownItem}>
+                <a href="/" className={styles.dropdownItemLink}>Профиль</a>
+            </div>
+            <div className={styles.dropdownItem}>
+                <a href="/" className={styles.dropdownItemLink}>Выйти</a>
+            </div>
+        </div>
+    </div>;
+}
+// /////////////////////////////////////////////////////////////////////////////
+const Authorization = createReactClass({
+    getInitialState() {
+        return {
+            shown: false,
+            authorized: false,
+        };
+    },
+    toogleDropdown() {
+        this.setState({
+            shown: !this.state.shown,
+        });
+    },
+    render() {
+        const { shown, authorized } = this.state;
+        return (
             <div className={styles.authBlock}>
                 {
                     (authorized) ? <div className={styles.nonAuthBlock}>
@@ -31,43 +67,9 @@ const Authorization = React.createClass({
                     shown && <DropdownContent />
                 }
             </div>
-    );
-  },
+        );
+    },
 });
-
-// /////////////////////////////////////////////////////////////////////////////
-function ViewAuthorized(props) {
-  const { shown, showDropdown } = props;
-  return <div className={styles.authUser}>
-        <div className={styles.authUserAvatar}>
-            <img src="http://placehold.it/100x100" className={styles.userAvatarImage} />
-        </div>
-        <div className={styles.authUserInfo}>
-            <span className={styles.authUserInfoItem}>Иван</span>
-            <span className={styles.authUserInfoItem}>Иванович</span>
-        </div>
-        <div className={styles.controlsBlock}>
-            <FontAwesome
-                name={(shown) ? 'caret-up' : 'caret-down'}
-                className={styles.controlBtnAuth}
-                onClick={() => showDropdown()} />
-        </div>
-    </div>;
-}
-
-// /////////////////////////////////////////////////////////////////////////////
-function DropdownContent() {
-  return <div className={styles.dropdownWrapper}>
-        <div className={styles.dropdown}>
-            <div className={styles.dropdownItem}>
-                <a href="/" className={styles.dropdownItemLink}>Профиль</a>
-            </div>
-            <div className={styles.dropdownItem}>
-                <a href="/" className={styles.dropdownItemLink}>Выйти</a>
-            </div>
-        </div>
-    </div>;
-}
 // /////////////////////////////////////////////////////////////////////////////
 export default Authorization;
 
