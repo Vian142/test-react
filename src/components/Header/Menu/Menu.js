@@ -1,6 +1,7 @@
 // /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 import styles from './styles.css';
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -10,7 +11,7 @@ const menuItems = [{
 },
 {
   title: 'Тесты',
-  url: '/',
+  url: '/tests',
 },
 {
   title: 'Материалы',
@@ -27,7 +28,7 @@ function Menu() {
         <ul className={styles.navList}>
             {
                 _.map(menuItems, (item, index) => <li key={index} className={styles.navItem}>
-                        <a href={item.url} className={styles.navLink}>{item.title}</a>
+                        <Link to={item.url} className={styles.navLink}>{item.title}</Link>
                     </li>)
             }
         </ul>

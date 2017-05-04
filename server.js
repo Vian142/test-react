@@ -15,7 +15,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 app.use('/images', express.static(path.join(__dirname, 'public/images'), {maxAge: '365 days'}));
 ///////////////////////////////////////////////////////////////////////////////
-app.get('*', function(req, res) {
+app.get('/*', function(req, res) {
+  console.log(`Запрос ${req.url}`);
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 ///////////////////////////////////////////////////////////////////////////////

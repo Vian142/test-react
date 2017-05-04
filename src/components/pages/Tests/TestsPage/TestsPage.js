@@ -4,6 +4,7 @@ import styles from './styles.css'
 ///////////////////////////////////////////////////////////////////////////////
 function TestPage() {
     return <div className={styles.wrapper}>
+        <h2>ТЕСТЫ</h2>
         <div className={styles.searchContainer}>
             <div className={styles.searchBlock}>
                 <input type="text" className={styles.searchInput} />
@@ -19,7 +20,7 @@ function TestPage() {
             </div>
         </div>
     </div>;
-};
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 export default TestPage;
