@@ -79,10 +79,10 @@ module.exports = {
         /* enable css @imports like Sass/Less */
         require('postcss-nested'),
         require('postcss-import')({
-          root: path.join(__dirname, '..'),
-          path: ['src/theme'],
-          addDependencyTo: bundler
-        })
+          root: path.join(__dirname),
+          path: ['src/theme']
+        }),
+        require("postcss-cssnext")
       ]
     }
   }
