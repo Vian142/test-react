@@ -1,24 +1,16 @@
-var postCSSConfig = [
-  /* autoprefix for different browser vendors */
-  require('autoprefixer'),
-  /* reset inherited rules */
-  require('postcss-initial')({
-    reset: 'inherited' // reset only inherited rules
-  }),
-  /* enable css @imports like Sass/Less */
-  require('postcss-import'),
-  /* enable nested css selectors like Sass/Less */
-  require('postcss-nested')
-  /* require global variables */
-  // require('postcss-simple-vars')({
-  //   variables: function variables() {
-  //     return require('../src/theme')
-  //   },
-  //   unknown: function unknown(node, name, result) {
-  //     node.warn(result, 'Unknown variable ' + name)
-  //   }
-  // }),
-]
+module.exports = () => {
+  return {
+    plugins: [
+      require('postcss-nested'),
+      require('postcss-font-awesome'),
+      require('postcss-import')({
+        root: __dirname,
+        path: ['src/theme']
 
-// Export the PostCSS Config for usage in webpack
-module.exports = postCSSConfig;
+      }),
+      require('postcss-cssnext')(
+        { browsers: ["last 3 versions"] }
+      )
+    ]
+  }
+}

@@ -19,7 +19,7 @@
 .nav-link {
     display: inline-block;
     padding: 5px 0 10px;
-    font-family: var(--font-normal);
+    font-family: var(--pt-sans);
     font-size: 14px;
     line-height: 1;
     font-weight: bold;
