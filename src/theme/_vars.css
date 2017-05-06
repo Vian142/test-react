@@ -2,8 +2,14 @@
   /* fonts */
   --font-normal: Arial, sans-serif;
   --font-light: 'Arial', sans-serif;
+  --pt-mono: 'PT Mono', sans-serif;
+  --pt-sans: 'PT Sans', sans-serif;
+  --pt-serif: 'PT Serif', serif;
   /* colors */
   --dark: #333;
   --white: #fff;
   --grey: #3e3e3e;
+  --dark-grey: #29292a;
+  --aqua: #5cc2be;
+  --blue-violet: #6979B7;
 }
