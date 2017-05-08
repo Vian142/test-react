@@ -1,8 +1,11 @@
 // /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import createReactClass from 'create-react-class';
+import classnames from 'classnames';
 import styles from './styles.css';
-import FontAwesome from 'react-fontawesome';
+/*eslint no-console: ["error", { allow: ["warn", "error"] }] */
+// /////////////////////////////////////////////////////////////////////////////
+
 
 // /////////////////////////////////////////////////////////////////////////////
 function ViewAuthorized(props) {
@@ -17,9 +20,10 @@ function ViewAuthorized(props) {
                 <span className={styles.authUserInfoItem}>Иванович</span>
             </div>
             <div className={styles.controlsBlock}>
-                <FontAwesome
-                    name={(shown) ? 'caret-up' : 'caret-down'}
-                    className={styles.controlBtnAuth}
+                <i
+                    className={classnames(
+                        styles.controlBtnAuth, 'fa',
+                        (shown) ? 'fa-caret-up' : 'fa-caret-down')}
                     onClick={() => showDropdown()} />
             </div>
         </div>
@@ -27,14 +31,17 @@ function ViewAuthorized(props) {
 }
 
 // /////////////////////////////////////////////////////////////////////////////
-function DropdownContent() {
+function DropdownContent(props) {
+    const { logOut } = props;
     return <div className={styles.dropdownWrapper}>
         <div className={styles.dropdown}>
             <div className={styles.dropdownItem}>
                 <a href="/" className={styles.dropdownItemLink}>Профиль</a>
             </div>
             <div className={styles.dropdownItem}>
-                <a href="/" className={styles.dropdownItemLink}>Выйти</a>
+                <span
+                    className={styles.dropdownItemLink}
+                    onClick={() => logOut()}>Выйти</span>
             </div>
         </div>
     </div>;
@@ -44,24 +51,37 @@ const Authorization = createReactClass({
     getInitialState() {
         return {
             shown: false,
-            authorized: false,
+            authorized: false
         };
     },
     toogleDropdown() {
         this.setState({
-            shown: !this.state.shown,
+            shown: !this.state.shown
         });
     },
     render() {
+        const { toogleSign } = this.props;
         const { shown, authorized } = this.state;
         return (
             <div className={styles.authBlock}>
                 {
-                    (authorized) ? <div className={styles.nonAuthBlock}>
-                        <span className={styles.nonAuthLink}>Регистрация</span>
-                        <br />
-                        <span className={styles.nonAuthLink}>Авторизация</span>
-                    </div> : <ViewAuthorized shown={shown} showDropdown={this.toogleDropdown} />
+                    (authorized) ?
+                        <ViewAuthorized
+                            shown={shown}
+                            showDropdown={this.toogleDropdown}
+                            authorized={authorized} /> :
+                        <div className={styles.nonAuthBlock}>
+                            <span className={styles.nonAuthItem}>
+                                Регистрация&#8194;
+                                <i className={classnames('fa', 'fa-users')} />
+                            </span>
+                            <span
+                                onClick={() => toogleSign()}
+                                className={styles.nonAuthItem}>
+                                Авторизация&#8194;
+                                <i className={classnames('fa', 'fa-sign-in')} />
+                            </span>
+                        </div>
                 }
                 {
                     shown && <DropdownContent />

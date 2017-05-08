@@ -34,6 +34,6 @@
 }
 
 .auth-wrapper {
-    display: block;
+    display: flex;
     padding-top: 5px;
 }

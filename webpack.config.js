@@ -54,14 +54,23 @@ module.exports = {
         'style-loader', 'css-loader?camelCase&modules' +
         '&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
         'source-map-loader', 'postcss-loader'
-        ],
+      ],
       exclude: /node_modules.*\.css$|(\_+\w+\.css$)/,
       include: path.join(__dirname, './src')
     },
     {
       test: /node_modules.*\.css$|(\_+\w+\.css$)/,
       loader: 'style-loader!css-loader'
-    }, {
+    }, 
+    // {
+    //   test: /\.(ttf|eot|woff|woff2)$/,
+    //   loader: 'url-loader',
+    //   options: {
+    //     name: 'fonts/[name]-[hash].[ext]',
+    //     limit: 10000
+    //   }
+    // },
+     {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/font-woff'
     }, {
@@ -73,7 +82,8 @@ module.exports = {
     }, {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader?name=fonts/[name]-[hash].[ext]'
-    }, {
+    },
+    {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=image/svg+xml'
     }, {

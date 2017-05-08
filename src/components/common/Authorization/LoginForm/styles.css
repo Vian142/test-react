@@ -1,0 +1,133 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*@import '_typography.css';*/
+@import '_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper-login {
+    display: block;
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+.login-form {
+    display: block;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 8px;
+    width: 320px;
+    border: 1px solid var(--grey);
+}
+
+.btn-close-wrapper {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+.btn-close {
+    display: inline-block;
+    width: 20px;
+    font-size: 18px;
+    color: var(--grey);
+    line-height: 25px;
+    font-weight: lighter;
+    &:hover {
+        cursor: pointer;
+        color: var(--dark);
+    }
+}
+
+.title-form {
+    display: block;
+    padding: 0 0 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: normal;
+    text-align: center;
+    color: var(--grey);
+}
+.form-wrapper {
+    padding: 15px 0 5px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.input-group {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+    &:nth-child(2) {
+        margin-bottom: 15px;
+    }
+    &-label {
+        display: block;
+        font-family: var(--pt-sans);
+        font-size: 16px;
+        font-weight: normal;
+        margin-bottom: 10px;
+        text-align: left;
+        display: none;
+    }
+    &-input {
+        display: block;
+        box-sizing: border-box;
+        height: 35px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+        margin: 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        font-family: var(--pt-sans);
+        font-size: 14px;
+        line-height: 1;
+        text-align: center;
+        transition: all 0.2s ease;
+        &:focus {
+            border-color: var(--blue-violet);
+            color: var(--blue-violet);
+        }
+    }
+}
+
+.btn-wrapper {
+    display: block;
+    width: 100%;
+    padding: 10px 0 5px;
+}
+.btn-form {
+    display: inline-block;
+    height: 35px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--blue-violet);
+    font-family: var(--pt-sans);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--aqua);
+        text-decoration: underline;
+    }
+}

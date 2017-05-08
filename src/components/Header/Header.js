@@ -1,13 +1,14 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import Menu from './Menu/Menu';
-import Authorization from './Authorization/Authorization';
+import Authorization from '../common//Authorization/Authorization';
 import logoImage from './logo.png';
 import styles from './styles.css';
 
 
 ///////////////////////////////////////////////////////////////////////////////
-function Header() {
+function Header(props) {
+    const {toogleSign} = props;
     return <div className={styles.mainHeader}>
         <div className={styles.headerWrapper}>
             <div className={styles.logoWrapper}>
@@ -22,7 +23,7 @@ function Header() {
                 <Menu />
             </div>
             <div className={styles.authWrapper}>
-                <Authorization />
+                <Authorization toogleSign={toogleSign}/>
             </div>
         </div>
     </div>
