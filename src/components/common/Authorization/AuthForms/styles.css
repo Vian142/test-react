@@ -2,7 +2,7 @@
 /*@import '_typography.css';*/
 @import '_vars.css';
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.main-wrapper-login {
+.main-wrapper {
     display: block;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
     height: 100%;
     z-index: 500;
 }
-.login-form {
+.container-form {
     display: block;
     box-sizing: border-box;
     padding: 25px 30px;

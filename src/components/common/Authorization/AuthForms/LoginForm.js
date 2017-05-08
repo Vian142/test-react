@@ -6,8 +6,8 @@ import styles from './styles.css';
 function LoginForm(props) {
     const { toogleSign } = props;
     return (
-        <div className={styles.mainWrapperLogin}>
-            <div className={styles.loginForm}>
+        <div className={styles.mainWrapper}>
+            <div className={styles.containerForm}>
                 <span className={styles.btnCloseWrapper}>
                     <i className={classnames(styles.btnClose, 'fa fa-times')}
                         title='Закрыть'

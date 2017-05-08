@@ -5,8 +5,8 @@ import 'normalize.css';
 import 'font-awesome/css/font-awesome.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import LoginForm from './common/Authorization/LoginForm/LoginForm';
-import RegistrationForm from './common/Authorization/RegistrationForm/RegistrationForm';
+import LoginForm from './common/Authorization/AuthForms/LoginForm';
+import RegistrationForm from './common/Authorization/AuthForms/RegistrationForm';
 
 ///////////////////////////////////////////////////////////////////////////////
 const App = createReactClass({
