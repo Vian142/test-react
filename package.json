@@ -65,6 +65,7 @@
     "stylelint": "^7.10.1",
     "stylelint-csstree-validator": "^1.1.1",
     "stylelint-webpack-plugin": "^0.7.0",
+    "svg-inline-loader": "^0.7.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.0",
     "webpack-dev-middleware": "^1.6.1",

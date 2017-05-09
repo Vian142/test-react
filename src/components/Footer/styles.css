@@ -1,0 +1,73 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.footer {
+    display: block;
+    padding: 25px 0 10px;
+    background-color: var(--dark-grey);
+    font-family: var(--pt-sans);
+    color: var(--white);
+}
+
+.footer-content-wrapper {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-columns-item {
+
+}
+.columns-item2 {
+    flex: 0 0 50%;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.footer-title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--white);
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.footer-logo {
+    display: block;
+    max-width: 160px;
+    &-image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.footer-list {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+    list-style-type: none;
+}
+.footer-list-item {
+    padding: 0;
+    margin: 0 0 5px;
+    &-link {
+        font-family: var(--pt-sans);
+        font-size: 14px;
+        color: var(--white);
+        line-height: 1.5;
+        font-weight: normal;
+        letter-spacing: 1px;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

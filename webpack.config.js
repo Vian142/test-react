@@ -84,8 +84,8 @@ module.exports = {
       loader: 'file-loader?name=fonts/[name]-[hash].[ext]'
     },
     {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=image/svg+xml'
+      test:  /\.svg$/,
+      loader: 'svg-inline-loader'
     }, {
       test: /\.ico$/,
       loader: 'file-loader?name=images/[name].[ext]'
