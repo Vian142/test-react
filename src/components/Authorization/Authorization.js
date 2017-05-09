@@ -51,7 +51,7 @@ const Authorization = createReactClass({
     getInitialState() {
         return {
             shown: false,
-            authorized: false
+            authorized: true
         };
     },
     toogleDropdown() {
@@ -60,7 +60,7 @@ const Authorization = createReactClass({
         });
     },
     render() {
-        const { toogleSign } = this.props;
+        const { toogleSign, toogleReg } = this.props;
         const { shown, authorized } = this.state;
         return (
             <div className={styles.authBlock}>
@@ -71,7 +71,9 @@ const Authorization = createReactClass({
                             showDropdown={this.toogleDropdown}
                             authorized={authorized} /> :
                         <div className={styles.nonAuthBlock}>
-                            <span className={styles.nonAuthItem}>
+                            <span
+                                onClick={() => toogleReg()}
+                                className={styles.nonAuthItem}>
                                 Регистрация&#8194;
                                 <i className={classnames('fa', 'fa-users')} />
                             </span>

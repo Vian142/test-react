@@ -1,7 +1,6 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@import '../../../theme/_vars.css';
+@import '_vars.css';
 
-/*@import '_vars.css';*/
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .main-wrapper {
     display: block;
@@ -47,8 +46,45 @@
 .content-block {
     display: block;
     padding: 0 45px;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+    h1 {
+        font-family: inherit;
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--dark);
+        margin-bottom: 10px;
+    }
     &-text {
         display: block;
+    }
+}
+
+.btn-link-blue {
+    border: 2px solid var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
+    &:hover {
+        background-color: var(--white);
+        border-color: var(--blue);
+        color: var(--blue);
+    }
+}
+.btn-link-tests {
+    border: 2px solid var(--white);
+    background: transparent;
+    color: var(--white);
+    &:hover {
+        background-color: var(--white);
+        border-color: var(--white);
+        color: var(--blue);
     }
 }
 
@@ -56,28 +92,63 @@
 .statistics-block {
     display: block;
     background-color: #ececec;
-    padding: 35px 0;
+    padding: 60px 0;
 }
 .statistics-block-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .statistics-item {
     display: block;
-    &-text {
-        display: block;
-        font-family: var(--font-normal);
-        font-size: 16px;
-        font-weight: normal;
-        text-align: center;
-        margin-bottom: 15px;
-    }
     &-value {
         display: block;
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 26px;
+        font-family: var(--pt-sans);
+        font-size: 28px;
+        color: var(--dark);
         font-weight: bold;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    &-text {
+        display: block;
+        font-family: var(--pt-sans);
+        font-size: 14px;
+        font-weight: lighter;
+        color: var(--grey);
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0px rgba(0,0,0, 0.2);
     }
 }
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.section-text-block {
+    display: block;
+    padding: 75px 0 45px;
+    background-image: url('./images/background_1.jpg');
+    background-repeat: no-repeat;
+}
+.section-text {
+    display: block;
+    max-width: 780px;
+    margin: 0 auto;
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--white);
+    text-align: center;
+    font-weight: lighter;
+}
+.section-text-title {
+    text-align: center;
+    font-family: var(--pt-sans);
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+.section-text-btn-wrapper {
+    padding: 25px 0 10px;
+    text-align: center;
+}

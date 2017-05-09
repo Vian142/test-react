@@ -1,27 +1,21 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-@import '../../../theme/_vars.css';
+@import '_vars.css';
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .btn {
     display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-family: var(--font-light);
+    padding: 9px 18px;
+    font-family: var(--pt-sans);
     font-size: 14px;
     font-weight: lighter;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: red;
-    color: #fff;
+    color: var(--dark);
+    letter-spacing: 1px;
+    border: 1px solid black;
+    transition: all 0.2s ease;
     &:hover {
         cursor: pointer;
-        text-decoration: underline;
-    }
-    a {
-        display: block;
-        color: inherit;
-        background-color: inherit;
-        text-decoration: none;
     }
 }
 

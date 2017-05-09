@@ -1,7 +1,8 @@
 // /////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import classnames from 'classnames';
-import Button from '../../common/Button/Button';
+import LinkButton from '../../common/LinkButton/LinkButton';
+//import ContentHtml from '../../common/ContentHtml/ContentHtml';
 import styles from './styles.css';
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -12,14 +13,14 @@ function MainPage() {
                 <div className={styles.leftBlock}>
                     <div className={styles.pictureContent}>
                         <img
-                            src="http://lorempixel.com/g/500/400"
+                            src="http://lorempixel.com/g/500/450"
                             alt="Изображение" className={styles.pictureContentImage} />
                     </div>
                 </div>
                 <div className={styles.rightBlock}>
                     <div className={styles.contentBlock}>
                         <div className={styles.contentBlockText}>
-                            <h2>Заголовок статьи</h2>
+                            <h1>Заголовок статьи</h1>
                             <p>
                                 Значимость этих проблем настолько очевидна, что реализация намеченных плановых
                                 заданий позволяет оценить значение дальнейших направлений развития. Равным образом
@@ -32,13 +33,13 @@ function MainPage() {
                                 участие в формировании позиций.
                             </p>
                             <p>
-                                <Button
+                                <LinkButton
                                     url={'/'}
                                     type={'link'}
-                                    size={'big'}
+                                    styleClass={styles.btnLinkBlue}
                                 >
                                     Подробнее
-                                </Button>
+                                </LinkButton>
                             </p>
                         </div>
                     </div>
@@ -49,20 +50,20 @@ function MainPage() {
             <div className={styles.statisticsBlock}>
                 <div className={classnames(styles.statisticsBlockWrapper, styles.container)}>
                     <div className={styles.statisticsItem}>
-                        <div className={styles.statisticsItemText}>Тестов в базе</div>
                         <div className={styles.statisticsItemValue}>1098</div>
+                        <div className={styles.statisticsItemText}>Тестов в базе</div>
                     </div>
                     <div className={styles.statisticsItem}>
-                        <div className={styles.statisticsItemText}>Пройдено тестов</div>
                         <div className={styles.statisticsItemValue}>524</div>
+                        <div className={styles.statisticsItemText}>Пройдено тестов</div>
                     </div>
                     <div className={styles.statisticsItem}>
-                        <div className={styles.statisticsItemText}>Пользователей</div>
                         <div className={styles.statisticsItemValue}>119</div>
+                        <div className={styles.statisticsItemText}>Пользователей</div>
                     </div>
                     <div className={styles.statisticsItem}>
-                        <div className={styles.statisticsItemText}>Дано ответов</div>
                         <div className={styles.statisticsItemValue}>6985</div>
+                        <div className={styles.statisticsItemText}>Дано ответов</div>
                     </div>
                 </div>
             </div>
@@ -72,7 +73,7 @@ function MainPage() {
                 <div className={styles.leftBlock}>
                     <div className={styles.contentBlock}>
                         <div className={styles.contentBlockText}>
-                            <h2>Заголовок статьи</h2>
+                            <h1>Заголовок статьи</h1>
                             <p>
                                 Значимость этих проблем настолько очевидна, что реализация намеченных плановых
                                 заданий позволяет оценить значение дальнейших направлений развития. Равным образом
@@ -90,16 +91,31 @@ function MainPage() {
                 <div className={styles.rightBlock}>
                     <div className={styles.pictureContent}>
                         <img
-                            src="http://lorempixel.com/g/500/400"
+                            src="http://lorempixel.com/g/500/450"
                             alt="Изображение" className={styles.pictureContentImage} />
                     </div>
                 </div>
             </div>
         </section>
-        <section className={classnames(styles.sectionContainer)}>
-            <div className={classnames(styles.textBlock)}>
-                <div className={styles.textBlockTitle}>
-                    Найдите любой подходящий тест для себя
+        <section className={classnames(styles.sectionContainer, styles.sectionTextBlock)}>
+            <div className={classnames(styles.container)}>
+                <div className={styles.sectionTextContainer}>
+                    <div className={styles.sectionText}>
+                        <div className={styles.sectionTextTitle}>Поиск теста</div>
+                        <p>
+                            Найдите любой подходящий тест для себя в архиве множества тестов сервиса.
+                            Вы сможете протестировать свои навыки в ответах, и узнать что еще Вам необходимо узнать,
+                            чтобы дальше двигаться в своей карьере.
+                        </p>
+                    </div>
+                    <div className={styles.sectionTextBtnWrapper}>
+                        <LinkButton
+                            url={'/tests'}
+                            type={'link-route'}
+                            styleClass={styles.btnLinkTests}>
+                            Поиск теста
+                        </LinkButton>
+                    </div>
                 </div>
             </div>
         </section>

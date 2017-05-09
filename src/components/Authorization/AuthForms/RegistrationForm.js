@@ -3,13 +3,16 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from './styles.css';
 // /////////////////////////////////////////////////////////////////////////////
-function RegistrationForm(){
+function RegistrationForm(props){
+    const {toogleReg} = props;
     return <div className={styles.mainWrapper}>
         <div className={styles.containerForm}>
             <span className={styles.btnCloseWrapper}>
-                    <i className={classnames(styles.btnClose, 'fa fa-times')}/>
+                    <i
+                    onClick={() => toogleReg()}
+                    className={classnames(styles.btnClose, 'fa fa-times')}/>
                 </span>
-            <div className={styles.title}>Зарегистрироваться</div>
+            <div className={styles.titleForm}>Зарегистрироваться</div>
             <div className={styles.formWrapper}>
                     <div className={styles.inputGroup}>
                         <label htmlFor='name'
