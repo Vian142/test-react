@@ -1,3 +1,88 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @import '_vars.css';
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.sidebar-wrapper {
+    display: block;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--aqua);
+    padding: 20px 10px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.sidebar-item {
+    display: block;
+    padding: 5px 0 10px;
+}
+.sidebar-item-title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.list-label-title {
+    display: block;
+	font-family: var(--pt-sans);
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:before {
+        content: ">";
+        display: inline-block;
+        font-weight: bold;
+        padding-right: 5px;
+    }
+}
+.dropdown {
+	height: 0;
+	display: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    li {
+        user-select: none;
+        font-family: var(--pt-sans);
+        font-size: 16px;
+        line-height: 1.5;
+        list-style-type: none;
+        a {
+            color: var(--dark);
+            text-decoration: none;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.sidebar-list input {
+	display: none;
+}
+
+.sidebar-list input:checked  ~ label{
+    text-decoration: underline;
+    user-select: none;
+    &:before {
+        content: "v";
+    }
+}
+.sidebar-list input:checked ~ .dropdown {
+    height: auto;
+    display: block;
+    min-height: 40px;
+}
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

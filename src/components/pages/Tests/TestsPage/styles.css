@@ -6,6 +6,7 @@
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 25px 0 15px;
 }
 .sidebar-container {
     flex: 0 0 300px;
