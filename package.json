@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start:dev": "cross-env HOT=true NODE_ENV='development' node server.js",
+    "start:dev": "cross-env HOT=true NODE_ENV='development' node server.js ",
     "lint": "eslint --ext .js,.jsx --cache true src/"
   },
   "repository": {

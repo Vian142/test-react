@@ -1,7 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import classnames from 'classnames';
-import SvgPicture  from './logotype.svg';
 import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -13,12 +12,12 @@ function Footer() {
                 <div className={classnames(styles.columnsItem, styles.columnsItem2)}>
                     <div className={styles.footerTitle}>Сервис Etelligence</div>
                     <div className={styles.footerLogo}>
-                        {
-                           <div dangerouslySetInnerHTML={{__html: SvgPicture}} />
-                        }
+                        Логотип
                     </div>
                     <div className={styles.footerText}>
-                        Много много текста
+                        Большая часть текста сделана из разделов 1.10.32–3 книги Цицерона «На грани Добра и Зла»
+                        («De finibus bonorum et malorum»). «Больше нет никого из тех, кто любит скорбь, поскольку
+                        это горе и поэтому хочет заполучить это». 
                     </div>
                 </div>
                 <div className={styles.columnsItem}>

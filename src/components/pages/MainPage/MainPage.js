@@ -2,7 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import LinkButton from '../../common/LinkButton/LinkButton';
-//import ContentHtml from '../../common/ContentHtml/ContentHtml';
+import mock_up_1 from './images/mock_up_1.jpg';
 import styles from './styles.css';
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -115,6 +115,35 @@ function MainPage() {
                             styleClass={styles.btnLinkTests}>
                             Поиск теста
                         </LinkButton>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className={classnames(styles.sectionContainer, styles.container)}>
+            <div className={styles.columnsBlock}>
+                <div className={styles.leftBlock}>
+                    <div className={styles.pictureContent}>
+                        <img
+                            src={mock_up_1}
+                            alt="Изображение" className={styles.pictureContentImage} />
+                    </div>
+                </div>
+                <div className={styles.rightBlock}>
+                    <div className={styles.contentBlock}>
+                        <div className={styles.contentBlockText}>
+                            <h1>Заголовок статьи</h1>
+                            <p>
+                                Значимость этих проблем настолько очевидна, что реализация намеченных плановых
+                                заданий позволяет оценить значение дальнейших направлений развития. Равным образом
+                                укрепление и развитие структуры способствует подготовки и реализации форм развития.
+                            </p>
+                            <p>
+                                Равным образом постоянный количественный рост и сфера нашей активности позволяет
+                                выполнять важные задания по разработке дальнейших направлений развития.
+                                Товарищи! рамки и место обучения кадров обеспечивает широкому кругу (специалистов)
+                                участие в формировании позиций.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
