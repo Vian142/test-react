@@ -61,30 +61,25 @@ module.exports = {
     {
       test: /node_modules.*\.css$|(\_+\w+\.css$)/,
       loader: 'style-loader!css-loader'
-    }, 
-    // {
-    //   test: /\.(ttf|eot|woff|woff2)$/,
-    //   loader: 'url-loader',
-    //   options: {
-    //     name: 'fonts/[name]-[hash].[ext]',
-    //     limit: 10000
-    //   }
-    // },
-     {
-      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/font-woff'
-    }, {
-      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/font-woff'
-    }, {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'url-loader?name=fonts/[name]-[hash].[ext]&limit=10000&mimetype=application/octet-stream'
-    }, {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file-loader?name=fonts/[name]-[hash].[ext]'
+    },
+    { 
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "file-loader",
+      options: {
+        name: '[name]-[hash].[ext]',
+        outputPath: 'fonts/'
+      }
+    },
+    { 
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "file-loader",
+      options: {
+        name: '[name]-[hash].[ext]',
+        outputPath: 'fonts/'
+      }
     },
     {
-      test:  /\.svg$/,
+      test: /\.svg$/,
       loader: 'svg-inline-loader'
     }, {
       test: /\.ico$/,

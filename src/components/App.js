@@ -2,6 +2,7 @@
 import React from 'react';
 import createReactClass from 'create-react-class';
 import 'normalize.css';
+import '../theme/_typography.css';
 import 'font-awesome/css/font-awesome.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
