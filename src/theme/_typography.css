@@ -80,6 +80,13 @@
 * {
   box-sizing: border-box;
 }
+.container {
+    display: block;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 body {
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;

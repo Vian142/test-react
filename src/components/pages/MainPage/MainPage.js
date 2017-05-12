@@ -8,7 +8,7 @@ import styles from './styles.css';
 // /////////////////////////////////////////////////////////////////////////////
 function MainPage() {
     return <div className={styles.mainWrapper}>
-        <section className={classnames(styles.sectionContainer, styles.container)}>
+        <section className={classnames(styles.sectionContainer, 'container')}>
             <div className={styles.columnsBlock}>
                 <div className={styles.leftBlock}>
                     <div className={styles.pictureContent}>
@@ -48,7 +48,7 @@ function MainPage() {
         </section>
         <section className={classnames(styles.sectionContainer)}>
             <div className={styles.statisticsBlock}>
-                <div className={classnames(styles.statisticsBlockWrapper, styles.container)}>
+                <div className={classnames(styles.statisticsBlockWrapper, 'container')}>
                     <div className={styles.statisticsItem}>
                         <div className={styles.statisticsItemValue}>1098</div>
                         <div className={styles.statisticsItemText}>Тестов в базе</div>
@@ -68,7 +68,7 @@ function MainPage() {
                 </div>
             </div>
         </section>
-        <section className={classnames(styles.sectionContainer, styles.container)}>
+        <section className={classnames(styles.sectionContainer, 'container')}>
             <div className={styles.columnsBlock}>
                 <div className={styles.leftBlock}>
                     <div className={styles.contentBlock}>

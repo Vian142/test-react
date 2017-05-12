@@ -2,11 +2,12 @@
 @import '_vars.css';
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper {
+    padding: 25px 0 10px;
+    margin-bottom: 40px;
+}
 .wrapper-container {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 25px 0 15px;
 }
 .sidebar-container {
     flex: 0 0 250px;
@@ -14,4 +15,10 @@
 }
 .content-container {
     flex: 1 1 auto;
+}
+.tests-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 15px 0 20px;
 }

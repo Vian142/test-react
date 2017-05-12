@@ -1,0 +1,71 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.wrapper-card {
+    display: block;
+    flex-basis: 260px;
+    box-sizing: border-box;
+    width: 260px;
+    margin: 0 10px 15px;
+    padding: 10px 15px 15px;
+    border: 1px solid var(--blue-violet);
+    border-radius: 4px;
+    font-family: var(--pt-sans);
+}
+
+.card-title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark);
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.card-description {
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--dark-grey);
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.card-category {
+    font-family: var(--pt-sans);
+    color: var(--grey);
+}
+.category-link {
+    font-weight: normal;
+    text-decoration: none;
+    color: var(--dark-grey);
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+.level {
+    padding: 5px 0 3px;
+    color: var(--grey);
+    i {
+        font-size: 12px;
+        color: var(--orange);
+    }
+}
+.btn-wrapper {
+    margin-top: 10px;
+    padding: 10px 5px 0;
+    text-align: center;
+}
+.card-btn {
+    border-color: var(--blue);
+    color: var(-blue);
+    border-radius: 4px;
+    &:hover {
+        color: var(--white);
+        background-color: var(--blue);
+    }
+}
