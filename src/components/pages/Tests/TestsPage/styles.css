@@ -22,3 +22,29 @@
     justify-content: flex-start;
     padding: 15px 0 20px;
 }
+
+.search-block {
+    padding: 5px 10px;
+    display: flex;
+}
+.search-input {
+    height: 35px;
+    border: 1px solid var(--grey);
+    border-radius: 4px 0 0 4px;
+    flex: 1 1 auto;
+}
+.search-btn {
+    flex: 0 0 35px;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    font-size: 16px;
+    margin-left: -1px;
+    transition: all 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--blue);
+        border-color: var(--blue);
+        color: var(--white);
+    }
+}

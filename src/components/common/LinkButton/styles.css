@@ -4,7 +4,7 @@
 
 .btn {
     display: inline-block;
-    padding: 9px 18px;
+    padding: 9px 18px 6px;
     font-family: var(--pt-sans);
     font-size: 14px;
     font-weight: lighter;

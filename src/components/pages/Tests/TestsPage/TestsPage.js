@@ -3,6 +3,7 @@ import React from 'react';
 import _ from 'lodash';
 import classnames from 'classnames';
 import Sidebar from '../../../common/Sidebar/Sidebar';
+import TitlePage from '../../../common/TitlePage/TitlePage';
 import TestCard from '../TestCard/TestCard';
 import styles from './styles.css'
 ///////////////////////////////////////////////////////////////////////////////
@@ -80,7 +81,7 @@ function TestPage() {
                 <Sidebar />
             </div>
             <div className={styles.contentContainer}>
-                <h2>ТЕСТЫ</h2>
+                <TitlePage>Страница тестов</TitlePage>
                 <div className={styles.searchContainer}>
                     <div className={classnames(styles.searchBlock)}>
                         <input type="text" className={styles.searchInput} />
