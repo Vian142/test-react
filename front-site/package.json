@@ -78,7 +78,6 @@
     "font-awesome": "^4.7.0",
     "normalize.css": "^6.0.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "react-router": "^4.1.1"
+    "react-dom": "^15.3.1"
   }
 }
