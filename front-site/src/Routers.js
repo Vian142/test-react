@@ -15,11 +15,11 @@ const Routers = () => (
   <Router>
     <div>
       <Route exact path='/' render={() => <LayoutFront><MainPage/></LayoutFront>} />
-      <Route exact path='/tests' render={() => <LayoutFront><TestPage/></LayoutFront>} />
-      <Route exact path='/Materials' render={() => <LayoutFront><Materials/></LayoutFront>} />
-      <Route exact path='/about' render={() => <LayoutFront><About/></LayoutFront>} />
-      <Route path='/admin' render={() => <LayoutBack><AdminPage/></LayoutBack>} />
-      <Route exact path='/admin/tests' render={() => <LayoutBack><TestsBack/></LayoutBack>} />
+      <Route path='/tests' render={() => <LayoutFront><TestPage/></LayoutFront>} />
+      <Route path='/Materials' render={() => <LayoutFront><Materials/></LayoutFront>} />
+      <Route path='/about' render={() => <LayoutFront><About/></LayoutFront>} />
+      <Route exact path='/admin' render={() => <LayoutBack><AdminPage/></LayoutBack>} />
+      <Route path='/admin/tests' render={() => <LayoutBack><TestsBack/></LayoutBack>} />
     </div>
   </Router>
 );

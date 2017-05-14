@@ -1,0 +1,60 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.sidebar-wrapper {
+    display: block;
+    height: 100%;
+    min-width: 280px;
+    background-color: var(--purple-blue);
+}
+.sidebar-logo {
+    display: block;
+    text-align: center;
+    color: white;
+    height: 100px;
+}
+
+.menu-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.menu-item {
+    display: block;
+}
+.menu-link {
+    display: block;
+    padding: 25px 10px 25px 10px;
+    color: var(--white);
+    text-decoration: none;
+    border-left: 10px solid transparent;
+    transition: all 0.3s ease;
+    user-select: none;
+    &:hover {
+        cursor: pointer;
+        background-color: #122143;
+        border-left-color: #5584ff;
+        i {
+             color: #5584ff;
+        }
+    }
+}
+.menu-icon {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    font-size: 24px;
+    margin-right: 10px;
+    color: rgba(255,255,255, 0.6);
+    transition: all 0.3s ease;
+}
+.menu-link-text {
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    color: var(--white);
+    line-height: 1;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 1px;
+}
