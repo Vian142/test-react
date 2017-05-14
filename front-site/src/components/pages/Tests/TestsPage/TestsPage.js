@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import Sidebar from '../../../common/Sidebar/Sidebar';
 import TitlePage from '../../../common/TitlePage/TitlePage';
 import TestCard from '../TestCard/TestCard';
-import styles from './styles.css'
+import styles from './styles.css';
 ///////////////////////////////////////////////////////////////////////////////
 const cards = [
     {
@@ -21,7 +21,7 @@ const cards = [
     {
         id: 2,
         title: 'Интегрированные информационные системы (ERP-системы) в экономике',
-        description: 'Есть много вариантов Lorem Ipsum, но большинство из них'+
+        description: 'Есть много вариантов Lorem Ipsum, но большинство из них' +
         'имеет не всегда приемлемые модификации, например, юмористические вставки или слова',
         category: 'Экономика',
         level: 3,
@@ -91,11 +91,13 @@ function TestPage() {
                             <i className="fa fa-search" />
                         </button>
                     </div>
-                    <div className={styles.testsList}>
-                        {
-                            _.map(cards, (item, index) => <TestCard key={index} data={item}/>)
-                        }
-                    </div>
+                    {
+                        <div className={styles.testsList}>
+                            {
+                                _.map(cards, (item, index) => <TestCard key={index} data={item} />)
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>

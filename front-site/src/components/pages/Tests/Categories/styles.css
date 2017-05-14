@@ -1,0 +1,70 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.categories-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.category-item {
+    flex-basis: 31%;
+    min-width: 200px;
+    min-height: 180px;
+    box-sizing: border-box;
+    width: 260px;
+    margin: 0 10px 15px;
+    padding: 10px 15px 10px;
+    border: 2px solid var(--blue-violet);
+    border-radius: 4px;
+    font-family: var(--pt-sans);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    &:hover {
+        border-color: var(--orange);
+    }
+}
+.category-title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.category-description {
+    margin-bottom: 15px;
+}
+.category-tests {
+    padding: 5px 0 10px;
+    text-align: center;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    color: var(--dark-grey);
+    line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.tests-value {
+    font-size: 24px;
+    color: var(--dark-grey);
+}
+.category-btn-wrapper {
+    text-align: center;
+    margin-top: auto;
+}
+
+.category-btn {
+    border: 1px solid var(--blue);
+    color: var(--white);
+    background-color: var(--blue);
+    &:hover {
+        border-color: var(--green);
+        background-color: var(--green);
+    } 
+}

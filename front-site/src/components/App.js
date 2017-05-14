@@ -8,7 +8,6 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import LoginForm from './Authorization/AuthForms/LoginForm';
 import RegistrationForm from './Authorization/AuthForms/RegistrationForm';
-import Test from './pages/Tests/Test/Test';
 
 ///////////////////////////////////////////////////////////////////////////////
 const App = createReactClass({
@@ -39,9 +38,6 @@ const App = createReactClass({
       }
       {
         shownRegForm && <RegistrationForm toogleReg={this.toogleReg}/>
-      }
-      {
-        false && <Test/>
       }
       <Footer />
     </div>
