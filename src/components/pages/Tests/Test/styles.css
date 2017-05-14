@@ -1,0 +1,103 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper {
+    display: block;
+    position: fixed;
+    background-color: rgba(0,0,0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+}
+.test-wrapper {
+    display: block;
+    position: absolute;
+    background-color: var(--white);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 25px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0, 0.3);
+}
+
+.test-title {
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    line-height: 1;
+    color: var(--dark-grey);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.ticket-number {
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    color: var(--dark-grey);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.ticket-question {
+    max-width: 300px;
+    margin: 0 auto 15px;
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--dark);
+    text-align: center;
+    font-style: italic;
+}
+.ticket-answers {
+    
+}
+.answer-item {
+    display: block;
+    padding: 5px 0;
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark);
+    margin-bottom: 5px;
+    input {
+        display: none;
+    }
+    i {
+        font-size: 16px;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+.answer-text {
+    display: inline-block;
+    padding-left: 10px;
+    user-select: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.test-btn-wrapper {
+    padding: 10px 0 5px;
+}
+.test-btn {
+    border: 0;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--blue);
+    transition: all 0.2s ease;
+    i {
+        font-weight: 300;
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: var(--green);
+    }
+}
