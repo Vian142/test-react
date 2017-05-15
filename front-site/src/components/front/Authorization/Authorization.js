@@ -36,7 +36,7 @@ function DropdownContent(props) {
     return <div className={styles.dropdownWrapper}>
         <div className={styles.dropdown}>
             <div className={styles.dropdownItem}>
-                <a href="/" className={styles.dropdownItemLink}>Профиль</a>
+                <a href="/admin" className={styles.dropdownItemLink}>Профиль</a>
             </div>
             <div className={styles.dropdownItem}>
                 <span
