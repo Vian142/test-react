@@ -5,6 +5,7 @@ import 'normalize.css';
 import '../../../theme/_typography.css';
 import 'font-awesome/css/font-awesome.css';
 import Sidebar from '../Sidebar/Sidebar';
+import Header from '../Header/Header';
 import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -16,7 +17,7 @@ const LayoutBack = createReactClass({
         <Sidebar/>
       </div>
       <div className={styles.rightContainer}>
-        <div className={styles.header}>Шапка</div>
+        <Header/>
         {children}
       </div>
     </div>

@@ -2,17 +2,8 @@
 @import '_vars.css';
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.main-wrapper {
-    display: flex;
-    height: 100vh;
-    min-height: 468px;
-}
-.left-container {
-    display: block;
-    height: 100%;
-}
-.right-container {
-    display: block;
-    flex: 1 1 auto;
-    background-color: #f6f7fa;
+.header {
+    height: 100px;
+    background-color: var(--white);
+    box-shadow: 0 1px 1px 0px rgba(0,0,0, 0.1);
 }
