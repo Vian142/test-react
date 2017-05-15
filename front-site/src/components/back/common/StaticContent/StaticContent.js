@@ -1,14 +1,19 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
+import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
-function AdminPage(){
-    return <div>
-        Админская часть
-    </div>
+function StaticContent(props) {
+    const { children, titlePage = null } = props;
+    return <div className={styles.wrapperContent}>
+        {
+            titlePage && <div className={styles.titlePage}>{titlePage}</div>
+        }
+        {children}
+    </div>;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-export default AdminPage;
+export default StaticContent;
 
 ///////////////////////////////////////////////////////////////////////////////
