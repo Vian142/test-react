@@ -21,9 +21,9 @@ function Menu() {
                 </Link>
             </li>
             <li className={styles.menuItem}>
-                <Link to='/admin' className={styles.menuLink}>
-                    <i className={classnames('fa fa-user-o', styles.menuIcon)} />
-                    <span className={styles.menuLinkText}>Профиль</span>
+                <Link to='/admin/statistics' className={styles.menuLink}>
+                    <i className={classnames('fa fa-bar-chart', styles.menuIcon)} />
+                    <span className={styles.menuLinkText}>Статистика</span>
                 </Link>
             </li>
             <li className={styles.menuItem}>
