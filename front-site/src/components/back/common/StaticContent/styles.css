@@ -4,6 +4,16 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .wrapper-content {
     display: block;
+    padding: 10px 15px;
     position: relative;
     height: 100%;
+}
+.title-page {
+    display: block;
+    font-family: var(--pt-sans);
+    font-size: 22px;
+    color: var(--dark);
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 10px;    
 }

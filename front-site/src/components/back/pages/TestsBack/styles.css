@@ -2,3 +2,58 @@
 @import '_vars.css';
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper {
+    display: block;
+    padding: 15px 15px 20px;
+    background-color: var(--white);
+    border-radius: 4px;
+    border: 1px solid var(--grey);
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.table-container {
+    width: 100%;
+    margin: 15px 0 5px;
+    border-collapse: collapse;
+}
+.table-head {
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: var(--grey);
+    text-transform: uppercase;
+}
+.table-cell {    
+    border: 1px solid var(--grey);
+    padding: 15px 10px;
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    line-height: 1.2;
+}
+.table-cell-control {
+    composes: table-cell;
+    max-width: 50px;
+    text-align: center;
+}
+.table-cell-date {
+    composes: table-cell;
+    max-width: 50px;
+    text-align: center;
+}
+.btn-control {
+    display: inline-block;
+    color: var(--grey);
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 5px;
+    &:hover {
+        cursor: pointer;
+        color: var(--dark-grey);
+    }
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
