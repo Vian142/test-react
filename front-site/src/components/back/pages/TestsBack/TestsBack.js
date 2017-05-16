@@ -53,7 +53,7 @@ function TestsBack() {
                 </thead>
                 <tbody>
                     {
-                        _.times(9, (index) => <TableRow key={index} />)
+                        _.times(28, (index) => <TableRow key={index} />)
                     }
                 </tbody>
             </table>

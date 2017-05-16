@@ -4,15 +4,23 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .main-wrapper {
     display: flex;
-    height: 100vh;
     min-height: 468px;
 }
 .left-container {
     display: block;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    z-index: 10;
 }
 .right-container {
     display: block;
-    flex: 1 1 auto;
+    position: relative;
+    padding-left: 260px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: #f6f7fa;
 }
