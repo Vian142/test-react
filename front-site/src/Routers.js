@@ -10,6 +10,7 @@ import LayoutBack from './components/back/LayoutBack/LayoutBack';
 import AdminPage from './components/back/pages/AdminPage/AdminPage';
 import TestsBack from './components/back/pages/TestsBack/TestsBack';
 import StatisticsPage from './components/back/pages/StatisticsPage/StatisticsPage';
+import Profile from './components/back/pages/Profile/Profile';
 
 // /////////////////////////////////////////////////////////////////////////////
 const Routers = () => (
@@ -21,7 +22,8 @@ const Routers = () => (
       <Route path='/about' render={() => <LayoutFront><About/></LayoutFront>} />
       <Route exact path='/admin' render={() => <LayoutBack><AdminPage/></LayoutBack>} />
       <Route path='/admin/tests' render={() => <LayoutBack><TestsBack/></LayoutBack>} />
-      <Route path='/admin/statistics' render={() => <LayoutBack><StatisticsPage/></LayoutBack>} />
+      <Route path='/admin/statistics' render={() => <LayoutBack><StatisticsPage /></LayoutBack>} />
+      <Route path='/admin/profile' render={() => <LayoutBack><Profile/></LayoutBack>} />
     </div>
   </Router>
 );

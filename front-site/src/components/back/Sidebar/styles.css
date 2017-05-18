@@ -25,10 +25,10 @@
 }
 .menu-link {
     display: block;
-    padding: 25px 10px 25px 10px;
+    padding: 20px 10px 20px 10px;
     color: var(--white);
     text-decoration: none;
-    border-left: 10px solid transparent;
+    border-left: 6px solid transparent;
     transition: all 0.3s ease;
     user-select: none;
     &:hover {
@@ -42,16 +42,16 @@
 }
 .menu-icon {
     display: inline-block;
-    width: 40px;
+    width: 30px;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 10px;
     color: rgba(255,255,255, 0.6);
     transition: all 0.3s ease;
 }
 .menu-link-text {
     font-family: var(--pt-sans);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--white);
     line-height: 1;
     font-weight: normal;
