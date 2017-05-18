@@ -14,3 +14,11 @@
     display: flex;
     width: 100%;
 }
+
+.valueItem {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    font-family: var(--pt-sans);
+}

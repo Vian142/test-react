@@ -21,10 +21,9 @@ function StatisticsPage() {
     return <StaticContent {...propsPage}>
         <div className={styles.mainWrapper}>
             <div className={styles.columns}>
-                <ItemContent styleClass={styles.itemStatic}>
-                    <div className={styles.itemTitle}>
-                        Блок статистики
-                    </div>
+                <ItemContent
+                    styleClass={styles.itemStatic}
+                    title='Общая статистика'>
                     <div className={styles.itemContent}>
                         <PieChart width={240} height={300}>
                             <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>

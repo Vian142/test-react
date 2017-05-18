@@ -5,8 +5,11 @@ import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
 function ItemContent(props){
-    const {children, styleClass = null} = props;
+    const { children, styleClass = null, title = false} = props;
     return <div className={classnames(styles.itemWrapper, styleClass)}>
+        {
+            title && <div className={styles.titleItem}>{title}</div>
+        }
         {children}
     </div>
 }

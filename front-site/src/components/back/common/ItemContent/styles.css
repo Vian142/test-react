@@ -4,8 +4,20 @@
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .item-wrapper {
     display: block;
+    min-width: 240px;
     padding: 15px 15px 20px;
     background-color: var(--white);
     border-radius: 4px;
     border: 1px solid var(--grey);
+}
+
+.title-item {
+    text-align: center;
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark-grey);
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
