@@ -27,9 +27,9 @@ function Menu() {
                 </Link>
             </li>
             <li className={styles.menuItem}>
-                <Link to='/admin' className={styles.menuLink}>
-                    <i className={classnames('fa fa-envelope-open-o', styles.menuIcon)} />
-                    <span className={styles.menuLinkText}>Материалы</span>
+                <Link to='/admin/profile' className={styles.menuLink}>
+                    <i className={classnames('fa fa-user-o', styles.menuIcon)} />
+                    <span className={styles.menuLinkText}>Профиль</span>
                 </Link>
             </li>
         </ul>
