@@ -6,7 +6,11 @@ import styles from './styles.css';
 // /////////////////////////////////////////////////////////////////////////////
 function Header() {
     return <div className={classnames(styles.header)}>
-        Шапка сайта
+        <div className={styles.headerWrapper}>
+            <div className={styles.headerItem}>
+                <a href='/' className={styles.headerLinkBack}>Перейти на сайт</a>
+            </div>
+        </div>
     </div>
 }
 
