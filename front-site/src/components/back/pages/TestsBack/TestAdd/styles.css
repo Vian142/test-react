@@ -69,6 +69,45 @@
 .question-answers {
     padding: 0 15px;
 }
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.answer-add {
+    &-text {
+        border: 0;
+        border-bottom: 1px solid var(--grey);
+    }
+    &-checkbox {
+        font-size: 15px;
+        line-height: 15px;
+        margin-left: 10px;
+        &-input {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &-button {
+        display: inline-block;
+        margin-left: 10px;
+        border: 0;
+        padding: 0;
+        height: 20px;
+        width: 24px;
+        font-size: 18px;
+        line-height: 20px;
+        background: none;
+        color: var(--green);
+        text-align: center;
+        i {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
 
 .answers-list {
     padding: 10px 0 0;
@@ -82,19 +121,11 @@
     line-height: 1.2;
     color: var(--dark-grey);
     &-text {
-        border: 0;
-        border-bottom: 1px solid var(--grey);
-        padding-left: 5px;
         padding-right: 10px;
         color: var(--dark-grey);
     }
     &-checkbox {
-        input[type='checkbox'] {
-            display: none;
-        }
-        &:hover {
-            cursor: pointer;
-        }
+        margin-left: 5px;
     }
 }
 

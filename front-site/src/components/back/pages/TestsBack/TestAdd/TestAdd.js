@@ -31,62 +31,94 @@ function InputBlock({ onChange, value, label, placeholder = '', error, errorMsg,
     </div>
 }
 ///////////////////////////////////////////////////////////////////////////////
-const AnswerItem = createReactClass({
+const AddAnswer = createReactClass({
     getInitialState() {
         return {
-            text: '',
-            statusAnswer: false
+            answerText: '',
+            answerCheck: false
         }
     },
-    changeText(event) {
-        this.setState({ text: event.target.value });
+    setValue(name, event) {
+        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        this.setState({ [name]: value });
     },
-    checkAnswer() {
+    validateFields() {
+        this.props.answerAdd(this.state.answerText, this.state.answerCheck);
         this.setState({
-            statusAnswer: !this.state.statusAnswer
+            answerText: '',
+            answerCheck: false
         });
     },
     render() {
-        const { text, statusAnswer } = this.state;
-        return <li className={styles.answerItem}>
+        const { answerText, answerCheck } = this.state;
+        return <div className={styles.answeAdd}>
             <input
-                onChange={this.changeText}
-                className={styles.answerItemText}
+                onChange={_.partial(this.setValue, 'answerText')}
+                className={styles.answerAddText}
                 type="text"
-                value={text} />
-            <label className={styles.answerItemCheckbox}>
-                <i className={classnames('fa', (statusAnswer) ? 'fa-check-square-o' : 'fa-square-o')}></i>
-                <input type='checkbox' onChange={this.checkAnswer} />
+                value={answerText} />
+            <label className={styles.answerAddCheckbox}>
+                <input
+                    type="checkbox"
+                    onChange={_.partial(this.setValue, 'answerCheck')}
+                    className={styles.answerAddCheckboxInput} />
+                <i className={classnames('fa', (answerCheck) ? 'fa-check-square-o' : 'fa-square-o')}></i>
             </label>
-        </li>
+            <button
+                onClick={this.validateFields}
+                className={styles.answerAddButton}>
+                <i className={classnames('fa fa-plus-square')}></i>
+            </button>
+        </div>;
     }
-})
+});
+
+///////////////////////////////////////////////////////////////////////////////
+function AnswerItem(props) {
+    const { text, statusAnswer } = props;
+    return <li className={styles.answerItem}>
+        <span className={styles.answerItemText}>{text}</span>
+        <span className={styles.answerItemCheckbox} >
+            <i className={classnames('fa', (statusAnswer) ? 'fa-check-square-o' : 'fa-square-o')}></i>
+        </span>
+        <span className={styles.answerItemDelete}>
+            <i className={classnames('fa fa-times')}></i>
+        </span>
+    </li>
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 const Answers = createReactClass({
     getInitialState() {
         return {
-            answers: 1
+            answers: []
         }
     },
-    addAnswer() {
+    answerAdd(text, status) {
+        let answersData = this.state.answers;
+        const answer = {
+            text: text,
+            statusAnswer: status
+        }
+        answersData.push(answer);
         this.setState({
-            answers: this.state.answers + 1
-        });
+            answers: answersData
+        })
     },
     render() {
         const { answers } = this.state;
         return <div>
-            <ol className={styles.answersList}>
-            {
-                _.times(answers, (index) => <AnswerItem key={index} />)
-            }
-            </ol>
             <div className={styles.btnWrapper}>
-                <br/>
-                <span
-                    onClick={this.addAnswer}
-                    className={styles.addAnswer}>Добавить ответ</span>
-            </div>    
+                <AddAnswer answerAdd={this.answerAdd} />
+            </div>
+            <ol className={styles.answersList}>
+                {
+                    _.map(answers, (item, index) => <AnswerItem
+                        text={item.text}
+                        statusAnswer={item.statusAnswer} key={index} />)
+                }
+            </ol>
+
         </div>
     }
 })
