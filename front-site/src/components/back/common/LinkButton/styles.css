@@ -1,0 +1,30 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.btn {
+    display: inline-block;
+    padding: 9px 18px 6px;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark);
+    letter-spacing: 1px;
+    border: 1px solid black;
+    transition: all 0.2s ease;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn-small {
+    padding: 3px 5px;
+}
+.btn-normal {
+    padding: 6px 12px;
+}
+.btn-big {
+    padding: 9px 16px;
+}

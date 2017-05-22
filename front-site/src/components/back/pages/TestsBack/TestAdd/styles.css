@@ -10,8 +10,16 @@
     display: block;
     background: var(--white);
     padding: 10px 15px 10px;
+    border: 1px solid rgba(0,0,0, 0.1);
 }
-
+.test-block-title {
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    line-height: 1;
+    color: var(--dark-grey);
+    font-weight: bold;
+    margin: 5px 0 15px;
+}
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .input-block {
     display: block;
@@ -33,5 +41,106 @@
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.question-block {
+    display: block;
+    max-width: 960px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    padding: 10px 0;
+    &-title {
+        display: block;
+        font-family: var(--pt-sans);
+        font-size: 18px;
+        color: var(--dark);
+        font-weight: bold;
+        margin: 5px 0 15px;
+    }
+}
+.question-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.question-info {
+    flex: 0 0 60%;
+    padding: 0 15px;
+    border-right: 1px solid var(--grey);
+}
+.question-answers {
+    padding: 0 15px;
+}
+
+.answers-list {
+    padding: 10px 0 0;
+    margin: 0;
+    list-style-position: inside;
+}
+.answer-item {
+    display: list-item;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--dark-grey);
+    &-text {
+        border: 0;
+        border-bottom: 1px solid var(--grey);
+        padding-left: 5px;
+        padding-right: 10px;
+        color: var(--dark-grey);
+    }
+    &-checkbox {
+        input[type='checkbox'] {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.btn-submit {
+    display: inline-block;
+    padding: 1px 12px 1px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--green);
+    color: var(--white);
+    font-family: var(--pt-sans);
+    font-size: 12px;
+    line-height: 30px;
+    border: 0;
+    margin: 10px 0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+.btn-back {
+    display: inline-block;
+    padding: 1px 12px 1px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--red);
+    color: var(--white);
+    font-family: var(--pt-sans);
+    font-size: 12px;
+    line-height: 30px;
+    border: 0;
+    margin: 10px 0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 
 
