@@ -1,0 +1,22 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.input-block {
+    display: block;
+    margin-bottom: 15px;
+}
+.input-block-label {
+    display: block;
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    line-height: 1;
+    padding: 3px 0 5px;
+}
+.input-block-input {
+    display: block;
+    height: 30px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    padding: 0 10px 0 5px;
+}

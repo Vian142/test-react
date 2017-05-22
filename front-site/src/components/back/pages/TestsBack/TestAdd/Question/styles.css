@@ -1,0 +1,113 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.question-block {
+    display: block;
+    max-width: 960px;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    padding: 10px 0;
+    &-title {
+        display: block;
+        font-family: var(--pt-sans);
+        font-size: 18px;
+        color: var(--dark);
+        font-weight: bold;
+        margin: 5px 0 15px;
+    }
+}
+.question-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.question-info {
+    flex: 0 0 40%;
+    padding: 0 15px;
+    border-right: 1px solid var(--grey);
+}
+.question-answers {
+    flex: 0 0 60%;
+    padding: 0 15px;
+    &-title {
+        font-family: var(--pt-sans);
+        font-size: 16px;
+        color: var(--dark-grey);
+        line-height: 1;
+        font-weight: normal;
+    }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.answer-add {
+    &-text {
+        width: 230px;
+        border: 0;
+        border-bottom: 1px solid var(--grey);
+    }
+    &-checkbox {
+        font-size: 15px;
+        line-height: 15px;
+        margin-left: 10px;
+        &-input {
+            display: none;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &-button {
+        display: inline-block;
+        margin-left: 10px;
+        border: 0;
+        padding: 0;
+        height: 20px;
+        width: 24px;
+        font-size: 18px;
+        line-height: 20px;
+        background: none;
+        color: var(--green);
+        text-align: center;
+        i {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+.answers-list {
+    padding: 10px 0 0;
+    margin: 0;
+    list-style-position: inside;
+}
+.answer-item {
+    display: list-item;
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--dark-grey);
+    &-text {
+        display: inline-block;
+        width: 100%;
+        max-width: 220px;
+        vertical-align: top;
+        padding-right: 10px;
+        color: var(--dark-grey);
+    }
+    &-checkbox {
+        margin-left: 5px;
+    }
+    &-delete {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 16px;
+        color: var(--red);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
