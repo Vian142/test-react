@@ -62,17 +62,19 @@
     flex-wrap: nowrap;
 }
 .question-info {
-    flex: 0 0 60%;
+    flex: 0 0 40%;
     padding: 0 15px;
     border-right: 1px solid var(--grey);
 }
 .question-answers {
+    flex: 0 0 60%;
     padding: 0 15px;
 }
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 .answer-add {
     &-text {
+        width: 230px;
         border: 0;
         border-bottom: 1px solid var(--grey);
     }
@@ -121,11 +123,24 @@
     line-height: 1.2;
     color: var(--dark-grey);
     &-text {
+        display: inline-block;
+        width: 100%;
+        max-width: 220px;
+        vertical-align: top;
         padding-right: 10px;
         color: var(--dark-grey);
     }
     &-checkbox {
         margin-left: 5px;
+    }
+    &-delete {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 16px;
+        color: var(--red);
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

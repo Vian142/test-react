@@ -57,7 +57,9 @@ const AddAnswer = createReactClass({
                 className={styles.answerAddText}
                 type="text"
                 value={answerText} />
-            <label className={styles.answerAddCheckbox}>
+            <label
+                title='Ответ верен ?'
+                className={styles.answerAddCheckbox}>
                 <input
                     type="checkbox"
                     onChange={_.partial(this.setValue, 'answerCheck')}
@@ -75,13 +77,15 @@ const AddAnswer = createReactClass({
 
 ///////////////////////////////////////////////////////////////////////////////
 function AnswerItem(props) {
-    const { text, statusAnswer } = props;
+    const { text, statusAnswer, answerDelete, index } = props;
     return <li className={styles.answerItem}>
         <span className={styles.answerItemText}>{text}</span>
         <span className={styles.answerItemCheckbox} >
             <i className={classnames('fa', (statusAnswer) ? 'fa-check-square-o' : 'fa-square-o')}></i>
         </span>
-        <span className={styles.answerItemDelete}>
+        <span
+            onClick={() => answerDelete(index)}
+            className={styles.answerItemDelete}>
             <i className={classnames('fa fa-times')}></i>
         </span>
     </li>
@@ -91,7 +95,12 @@ function AnswerItem(props) {
 const Answers = createReactClass({
     getInitialState() {
         return {
-            answers: []
+            answers: [
+                {
+                    text: 'Текст',
+                    statusAnswer: true
+                }
+            ]
         }
     },
     answerAdd(text, status) {
@@ -101,6 +110,16 @@ const Answers = createReactClass({
             statusAnswer: status
         }
         answersData.push(answer);
+        this.setState({
+            answers: answersData
+        })
+    },
+    answerDelete(index) {
+        console.log(index);
+        let answersData = this.state.answers;
+        console.log(answersData);
+        answersData.splice(index,1)
+        console.log(answersData);
         this.setState({
             answers: answersData
         })
@@ -115,7 +134,10 @@ const Answers = createReactClass({
                 {
                     _.map(answers, (item, index) => <AnswerItem
                         text={item.text}
-                        statusAnswer={item.statusAnswer} key={index} />)
+                        statusAnswer={item.statusAnswer}
+                        key={index}
+                        index={index}
+                        answerDelete={this.answerDelete} />)
                 }
             </ol>
 
