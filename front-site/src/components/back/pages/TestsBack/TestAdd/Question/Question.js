@@ -18,7 +18,14 @@ const AddAnswerForm = createReactClass({
         this.setState({ [name]: value });
     },
     validateFields() {
-        this.props.answerAdd(this.state.answerText, this.state.answerCheck);
+        const addAnswer = this.props.addAnswer;
+        const data = {
+            id: this.props.id,
+            text: this.state.answerText,
+            status: this.state.answerCheck
+        }
+        addAnswer(data);
+        console.log(data);
         this.setState({
             answerText: '',
             answerCheck: false
@@ -78,29 +85,11 @@ const Answers = createReactClass({
             ]
         }
     },
-    answerAdd(text, status) {
-        let answersData = this.state.answers;
-        const answer = {
-            text: text,
-            statusAnswer: status
-        }
-        answersData.push(answer);
-        this.setState({
-            answers: answersData
-        })
-    },
-    answerDelete(index) {
-        let answersData = this.state.answers;
-        answersData.splice(index, 1)
-        this.setState({
-            answers: answersData
-        })
-    },
     render() {
-        const { answers } = this.props;
+        const { answers, id, addAnswer } = this.props;
         return <div>
             <div className={styles.btnWrapper}>
-                <AddAnswerForm answerAdd={this.answerAdd} />
+                <AddAnswerForm id={id} addAnswer={addAnswer} />
             </div>
             <ol className={styles.answersList}>
                 {
@@ -119,8 +108,14 @@ const Answers = createReactClass({
 
 ///////////////////////////////////////////////////////////////////////////////
 function Question(props) {
-    const { question } = props;
+    const { addAnswer, question, delQuestion, id } = props;
     return <div className={styles.questionBlock}>
+        <span
+            onClick={() => delQuestion(id)}
+            className={styles.questionBtnDelete}
+            title='Удалить вопрос'>
+            <i className={classnames('fa fa-times')} />
+        </span>
         <div className={styles.questionContent}>
             <div className={styles.questionInfo}>
                 <div className={styles.questionRow}>
@@ -138,7 +133,7 @@ function Question(props) {
             </div>
             <div className={styles.questionAnswers}>
                 <div className={styles.questionAnswersTitle}>Ответы: </div>
-                <Answers answers={question.answers}/>
+                <Answers id={id} addAnswer={addAnswer} answers={question.answers} />
             </div>
         </div>
     </div>

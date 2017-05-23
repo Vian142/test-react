@@ -33,22 +33,6 @@ const TestAdd = createReactClass({
                         answerText: 'Ответ 2',
                         status: true
                     }]
-                },
-                {
-                    questionTitle: '',
-                    questionDescription: '',
-                    answers: [{
-                        answerText: 'Ответ 4',
-                        status: false
-                    },
-                    {
-                        answerText: 'Ответ Нет',
-                        status: true
-                    },
-                    {
-                        answerText: 'Ответ 2',
-                        status: true
-                    }]
                 }
             ]
         }
@@ -58,10 +42,43 @@ const TestAdd = createReactClass({
         this.setState({ [name]: value });
     },
     addQuestion() {
-
+        let questionsData = _.clone(this.state.questions);
+        const question = {
+            questionTitle: '',
+            questionDescription: '',
+            answers: []
+        };
+        questionsData.push(question);
+        this.setState({
+            questions: questionsData
+        })
     },
-    addAnswer() {
-
+    delQuestion(index) {
+        console.log(index);
+        let questionsData = _.clone(this.state.questions);
+        questionsData.splice(index, 1);
+        this.setState({
+            questions: questionsData
+        })
+    },
+    addAnswer(id, text, status) {
+        let answersData = _.clone(this.state.questions);
+        console.log(answersData);
+        const answer = {
+            answerText: text,
+            status: status
+        }
+        answersData.answers.push(answer);
+        this.setState({
+            questions: answersData
+        })
+    },
+    answerDelete(index) {
+        let answersData = this.state.answers;
+        answersData.splice(index, 1)
+        this.setState({
+            answers: answersData
+        })
     },
     saveTest() {
         console.log('Сохранение теста');
@@ -127,9 +144,17 @@ const TestAdd = createReactClass({
                     <div className={styles.questionsContainer}>
                         {
                             _.map(questions, (question, index) => <Question
+                                addAnswer={this.addAnswer}
+                                delQuestion={this.delQuestion}
                                 key={index}
+                                id={index}
                                 question={question} />)
                         }
+                        <div className={styles.questionsBtnWrapper}>
+                            <span
+                                onClick={this.addQuestion}
+                                className={styles.questionsBtn}>Добавить билет</span>
+                        </div>
                     </div>
                     <div className={styles.btnWrapper}>
                         <button
