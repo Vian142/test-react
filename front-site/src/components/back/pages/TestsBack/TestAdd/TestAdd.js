@@ -1,6 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import _ from 'lodash';
+import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import createReactClass from 'create-react-class';
 import InputBlock from '../../../common/InputBlock/InputBlock';
@@ -23,16 +24,14 @@ const TestAdd = createReactClass({
             visible: false,
             questions: [
                 {
-                    questionTitle: '',
+                    questionTitle: 'Первый title',
+                    questionDescription: 'Описание',
+                    answers: []
+                },
+                {
+                    questionTitle: '2 title',
                     questionDescription: '',
-                    answers: [{
-                        answerText: 'Ответ 1',
-                        status: false
-                    },
-                    {
-                        answerText: 'Ответ 2',
-                        status: true
-                    }]
+                    answers: []
                 }
             ]
         }
@@ -63,13 +62,12 @@ const TestAdd = createReactClass({
     },
     addAnswer(id, text, status) {
         let answersData = _.clone(this.state.questions);
-        console.log(answersData);
         const answer = {
             answerText: text,
             status: status
         }
-        answersData.answers.push(answer);
-        this.setState({
+        answersData[id].answers.push(answer);
+         this.setState({
             questions: answersData
         })
     },
@@ -153,13 +151,15 @@ const TestAdd = createReactClass({
                         <div className={styles.questionsBtnWrapper}>
                             <span
                                 onClick={this.addQuestion}
-                                className={styles.questionsBtn}>Добавить билет</span>
+                                className={styles.questionsBtnAdd}>
+                                <i className={classnames('fa fa-plus')}/>&nbsp;
+                                Добавить билет</span>
                         </div>
                     </div>
-                    <div className={styles.btnWrapper}>
+                    <div className={styles.testBtnWrapper}>
                         <button
                             onClick={this.saveTest}
-                            className={styles.btnSubmit}>Добавить тест</button>
+                            className={styles.btnSubmit}>Сохранить тест</button>
                         <Link to='/admin/tests/' className={styles.btnBack}>Вернуться</Link>
                     </div>
                 </div>

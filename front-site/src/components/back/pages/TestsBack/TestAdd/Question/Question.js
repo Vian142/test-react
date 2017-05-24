@@ -19,13 +19,10 @@ const AddAnswerForm = createReactClass({
     },
     validateFields() {
         const addAnswer = this.props.addAnswer;
-        const data = {
-            id: this.props.id,
-            text: this.state.answerText,
-            status: this.state.answerCheck
-        }
-        addAnswer(data);
-        console.log(data);
+        const id = this.props.id;
+        const text = this.state.answerText;
+        const status = this.state.answerCheck;
+        addAnswer(id, text, status);
         this.setState({
             answerText: '',
             answerCheck: false

@@ -22,6 +22,31 @@
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.questions-btn-add {
+    display: inline-block;
+    padding: 1px 12px 1px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: var(--green);
+    color: var(--white);
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 30px;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.test-btn-wrapper {
+    max-width: 960px;
+    margin-top: 15px;
+    padding: 5px 0 10px;
+    border-top: 1px solid var(--grey);
+}
+
+
 .btn-submit {
     display: inline-block;
     padding: 1px 12px 1px;
@@ -30,12 +55,13 @@
     background-color: var(--green);
     color: var(--white);
     font-family: var(--pt-sans);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 30px;
     border: 0;
     margin: 10px 0;
     text-decoration: none;
     letter-spacing: 1px;
+    margin-right: 10px;
     &:hover {
         cursor: pointer;
         text-decoration: underline;
@@ -49,7 +75,7 @@
     background-color: var(--red);
     color: var(--white);
     font-family: var(--pt-sans);
-    font-size: 12px;
+    font-size: 14px;
     line-height: 30px;
     border: 0;
     margin: 10px 0;
