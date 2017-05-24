@@ -56,14 +56,14 @@ const AddAnswerForm = createReactClass({
 
 ///////////////////////////////////////////////////////////////////////////////
 function AnswerItem(props) {
-    const { text, statusAnswer, answerDelete, index } = props;
+    const { text, statusAnswer, delAnswer, id, index } = props;
     return <li className={styles.answerItem}>
         <span className={styles.answerItemText}>{text}</span>
         <span className={styles.answerItemCheckbox} >
             <i className={classnames('fa', (statusAnswer) ? 'fa-check-square-o' : 'fa-square-o')}></i>
         </span>
         <span
-            onClick={() => answerDelete(index)}
+            onClick={() => delAnswer(id, index)}
             className={styles.answerItemDelete}>
             <i className={classnames('fa fa-times')}></i>
         </span>
@@ -83,7 +83,7 @@ const Answers = createReactClass({
         }
     },
     render() {
-        const { answers, id, addAnswer } = this.props;
+        const { answers, id, addAnswer, delAnswer } = this.props;
         return <div>
             <div className={styles.btnWrapper}>
                 <AddAnswerForm id={id} addAnswer={addAnswer} />
@@ -91,11 +91,12 @@ const Answers = createReactClass({
             <ol className={styles.answersList}>
                 {
                     _.map(answers, (item, index) => <AnswerItem
+                        id={id}
                         text={item.answerText}
                         statusAnswer={item.status}
                         key={index}
                         index={index}
-                        answerDelete={this.answerDelete} />)
+                        delAnswer={delAnswer} />)
                 }
             </ol>
 
@@ -105,7 +106,7 @@ const Answers = createReactClass({
 
 ///////////////////////////////////////////////////////////////////////////////
 function Question(props) {
-    const { addAnswer, question, delQuestion, id } = props;
+    const { addAnswer, delAnswer, question, delQuestion, id } = props;
     return <div className={styles.questionBlock}>
         <span
             onClick={() => delQuestion(id)}
@@ -130,7 +131,11 @@ function Question(props) {
             </div>
             <div className={styles.questionAnswers}>
                 <div className={styles.questionAnswersTitle}>Ответы: </div>
-                <Answers id={id} addAnswer={addAnswer} answers={question.answers} />
+                <Answers
+                    id={id}
+                    addAnswer={addAnswer}
+                    answers={question.answers}
+                    delAnswer={delAnswer} />
             </div>
         </div>
     </div>

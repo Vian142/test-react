@@ -71,9 +71,9 @@ const TestAdd = createReactClass({
             questions: answersData
         })
     },
-    answerDelete(index) {
-        let answersData = this.state.answers;
-        answersData.splice(index, 1)
+    delAnswer(id, index) {
+        let answersData = this.state.questions;
+        answersData[id].answers.splice(index, 1)
         this.setState({
             answers: answersData
         })
@@ -143,6 +143,7 @@ const TestAdd = createReactClass({
                         {
                             _.map(questions, (question, index) => <Question
                                 addAnswer={this.addAnswer}
+                                delAnswer={this.delAnswer}
                                 delQuestion={this.delQuestion}
                                 key={index}
                                 id={index}
