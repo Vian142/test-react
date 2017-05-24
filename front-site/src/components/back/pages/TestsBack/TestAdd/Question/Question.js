@@ -106,7 +106,13 @@ const Answers = createReactClass({
 
 ///////////////////////////////////////////////////////////////////////////////
 function Question(props) {
-    const { addAnswer, delAnswer, question, delQuestion, id } = props;
+    const {
+        changeInfoQuestion,
+        addAnswer,
+        delAnswer,
+        question,
+        delQuestion,
+        id } = props;
     return <div className={styles.questionBlock}>
         <span
             onClick={() => delQuestion(id)}
@@ -120,13 +126,15 @@ function Question(props) {
                     <InputBlock
                         label='Заголовок вопроса'
                         id='title'
-                        value={question.questionTitle} />
+                        value={question.questionTitle}
+                        onChange={() => changeInfoQuestion(id)} />
                 </div>
                 <div className={styles.questionRow}>
                     <InputBlock
                         label='Описание вопроса'
                         id='title'
-                        value={question.questionDescription} />
+                        value={question.questionDescription}
+                        onChange={() => changeInfoQuestion(id)} />
                 </div>
             </div>
             <div className={styles.questionAnswers}>

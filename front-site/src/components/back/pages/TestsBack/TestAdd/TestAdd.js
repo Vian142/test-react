@@ -40,6 +40,9 @@ const TestAdd = createReactClass({
         const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
         this.setState({ [name]: value });
     },
+    changeInfoQuestion(id){
+        console.log(id);
+    },
     addQuestion() {
         let questionsData = _.clone(this.state.questions);
         const question = {
@@ -142,6 +145,7 @@ const TestAdd = createReactClass({
                     <div className={styles.questionsContainer}>
                         {
                             _.map(questions, (question, index) => <Question
+                                changeInfoQuestion={this.changeInfoQuestion}
                                 addAnswer={this.addAnswer}
                                 delAnswer={this.delAnswer}
                                 delQuestion={this.delQuestion}
