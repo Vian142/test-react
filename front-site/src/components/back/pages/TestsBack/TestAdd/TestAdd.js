@@ -71,7 +71,6 @@ const TestAdd = createReactClass({
         })
     },
     delQuestion(index) {
-        console.log(index);
         let questionsData = _.clone(this.state.questions);
         questionsData.splice(index, 1);
         this.setState({
