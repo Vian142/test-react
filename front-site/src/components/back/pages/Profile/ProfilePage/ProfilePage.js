@@ -18,7 +18,7 @@ function Education() {
             </div>
             <div className={styles.educationItemName}>Емрпт</div>
             <div className={styles.educationItemInfo}>Информационных систем и технологий</div>
-            <div className={styles.edu cationItemInfo}>Информатика</div>
+            <div className={styles.educationItemInfo}>Информатика</div>
             <div className={styles.educationItemGroup}>Т-154</div>
         </div>
     </div>;
