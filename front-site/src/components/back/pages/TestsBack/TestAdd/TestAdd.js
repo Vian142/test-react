@@ -24,12 +24,7 @@ const TestAdd = createReactClass({
             visible: false,
             questions: [
                 {
-                    questionTitle: 'Первый title',
-                    questionDescription: 'Описание',
-                    answers: []
-                },
-                {
-                    questionTitle: '2 title',
+                    questionTitle: '',
                     questionDescription: '',
                     answers: []
                 }
@@ -40,8 +35,28 @@ const TestAdd = createReactClass({
         const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
         this.setState({ [name]: value });
     },
-    changeInfoQuestion(id){
-        console.log(id);
+    changeTitle(id, value) {
+        let questionData = _.clone(this.state.questions);
+        questionData[id].questionTitle = value;
+        console.log(questionData);
+        this.setState({
+            questions: questionData
+        })
+    },
+    changeDescription(id, value) {
+        let questionData = _.clone(this.state.questions);
+        questionData[id].questionDescription = value;
+        console.log(questionData);
+        this.setState({
+            questions: questionData
+        })
+    },
+    changeInfoQuestion(id, field, value) {
+        if(field == 'title') {
+            return this.changeTitle(id, value);
+        } else {
+            return this.changeDescription(id, value);
+        }
     },
     addQuestion() {
         let questionsData = _.clone(this.state.questions);
@@ -70,7 +85,7 @@ const TestAdd = createReactClass({
             status: status
         }
         answersData[id].answers.push(answer);
-         this.setState({
+        this.setState({
             questions: answersData
         })
     },
@@ -90,7 +105,8 @@ const TestAdd = createReactClass({
                 'description',
                 'category',
                 'level',
-                'visible'
+                'visible',
+                'questions'
             ]);
         console.log(infoTest);
     },
@@ -101,45 +117,57 @@ const TestAdd = createReactClass({
                 <div className={styles.formWrapper}>
                     <div className={styles.testBlockTitle}>Информация о тесте</div>
                     <div className={styles.infoTest}>
-                        <div className={styles.inputRow}>
-                            <InputBlock
-                                onChange={_.partial(this.setValue, 'title')}
-                                label='Название'
-                                id='title'
-                                value={title} />
+                        <div className={styles.infoTestMain}>
+                            <div className={styles.inputRow}>
+                                <InputBlock
+                                    onChange={_.partial(this.setValue, 'title')}
+                                    label='Название'
+                                    id='title'
+                                    value={title} />
+                            </div>
+                            <div className={styles.inputRow}>
+                                <InputBlock
+                                    onChange={_.partial(this.setValue, 'description')}
+                                    label='Описание'
+                                    id='description'
+                                    value={description} />
+                            </div>
+                            <div className={styles.inputRow}>
+                                <InputBlock
+                                    onChange={_.partial(this.setValue, 'category')}
+                                    label='Категория'
+                                    id='category'
+                                    value={category} />
+                            </div>
                         </div>
-                        <div className={styles.inputRow}>
-                            <InputBlock
-                                onChange={_.partial(this.setValue, 'description')}
-                                label='Описание'
-                                id='description'
-                                value={description} />
-                        </div>
-                        <div className={styles.inputRow}>
-                            <InputBlock
-                                onChange={_.partial(this.setValue, 'category')}
-                                label='Категория'
-                                id='category'
-                                value={category} />
-                        </div>
-                        <div className={styles.inputRow}>
-                            <div>Уровень сложности</div>
-                            <input
-                                onChange={_.partial(this.setValue, 'level')}
-                                id='level'
-                                type="range"
-                                min='0'
-                                max='5'
-                                step='1'
-                                value={level} />
-                        </div>
-                        <div className={styles.inputRow}>
-                            <div>Активен</div>
-                            <input type='checkbox'
-                                onChange={_.partial(this.setValue, 'visible')}
-                                label='Активен'
-                                id='visible'
-                                value={visible} />
+                        <div className={styles.infoTestAdditionally}>
+                            <div className={styles.inputRow}>
+                                <label
+                                    className={styles.visibleLabel}
+                                    htmlFor="visible">
+                                    <span className={styles.visibleLabelText}>Активен</span>&nbsp;
+                                <i className={
+                                        classnames(styles.visibleLabelIcon, 'fa',
+                                            (visible) ? 'fa-check-square-o' : 'fa-square-o')} />
+                                </label>
+                                <input type='checkbox'
+                                    className={styles.visibleCheckbox}
+                                    onChange={_.partial(this.setValue, 'visible')}
+                                    label='Активен'
+                                    id='visible'
+                                    value={visible} />
+                            </div>
+                            <div className={styles.inputRow}>
+                                <div>Уровень сложности</div>
+                                <input
+                                    onChange={_.partial(this.setValue, 'level')}
+                                    id='level'
+                                    type="range"
+                                    min='0'
+                                    max='5'
+                                    step='1'
+                                    value={level} />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.questionsContainer}>
@@ -157,8 +185,8 @@ const TestAdd = createReactClass({
                             <span
                                 onClick={this.addQuestion}
                                 className={styles.questionsBtnAdd}>
-                                <i className={classnames('fa fa-plus')}/>&nbsp;
-                                Добавить билет</span>
+                                <i className={classnames('fa fa-plus')} />&nbsp;
+                                Добавить вопрос</span>
                         </div>
                     </div>
                     <div className={styles.testBtnWrapper}>

@@ -105,49 +105,62 @@ const Answers = createReactClass({
 })
 
 ///////////////////////////////////////////////////////////////////////////////
-function Question(props) {
-    const {
-        changeInfoQuestion,
-        addAnswer,
-        delAnswer,
-        question,
-        delQuestion,
-        id } = props;
-    return <div className={styles.questionBlock}>
-        <span
-            onClick={() => delQuestion(id)}
-            className={styles.questionBtnDelete}
-            title='Удалить вопрос'>
-            <i className={classnames('fa fa-times')} />
-        </span>
-        <div className={styles.questionContent}>
-            <div className={styles.questionInfo}>
-                <div className={styles.questionRow}>
-                    <InputBlock
-                        label='Заголовок вопроса'
-                        id='title'
-                        value={question.questionTitle}
-                        onChange={() => changeInfoQuestion(id)} />
+const Question = createReactClass({
+    getInitialState() {
+        return {}
+    },
+    setValue(name, event) {
+        let id = this.props.id;
+        let value = event.target.value
+        if(name == 'title') {
+            this.props.changeInfoQuestion(id, 'title', value)
+        } else {
+            this.props.changeInfoQuestion(id, 'description', value)
+        }
+    },
+    render() {
+        const {
+            addAnswer,
+            delAnswer,
+            question,
+            delQuestion,
+            id } = this.props;
+        return <div className={styles.questionBlock}>
+            <span
+                onClick={() => delQuestion(id)}
+                className={styles.questionBtnDelete}
+                title='Удалить вопрос'>
+                <i className={classnames('fa fa-times')} />
+            </span>
+            <div className={styles.questionContent}>
+                <div className={styles.questionInfo}>
+                    <div className={styles.questionRow}>
+                        <InputBlock
+                            label='Заголовок вопроса'
+                            id='title'
+                            value={question.questionTitle}
+                            onChange={_.partial(this.setValue, 'title')} />
+                    </div>
+                    <div className={styles.questionRow}>
+                        <InputBlock
+                            label='Описание вопроса'
+                            id='title'
+                            value={question.questionDescription}
+                            onChange={_.partial(this.setValue, 'description')} />
+                    </div>
                 </div>
-                <div className={styles.questionRow}>
-                    <InputBlock
-                        label='Описание вопроса'
-                        id='title'
-                        value={question.questionDescription}
-                        onChange={() => changeInfoQuestion(id)} />
+                <div className={styles.questionAnswers}>
+                    <div className={styles.questionAnswersTitle}>Ответы: </div>
+                    <Answers
+                        id={id}
+                        addAnswer={addAnswer}
+                        answers={question.answers}
+                        delAnswer={delAnswer} />
                 </div>
-            </div>
-            <div className={styles.questionAnswers}>
-                <div className={styles.questionAnswersTitle}>Ответы: </div>
-                <Answers
-                    id={id}
-                    addAnswer={addAnswer}
-                    answers={question.answers}
-                    delAnswer={delAnswer} />
             </div>
         </div>
-    </div>
-}
+    }
+})
 
 ///////////////////////////////////////////////////////////////////////////////
 export default Question;

@@ -12,6 +12,7 @@
     padding: 10px 15px 10px;
     border: 1px solid rgba(0,0,0, 0.1);
 }
+
 .test-block-title {
     font-family: var(--pt-sans);
     font-size: 18px;
@@ -19,6 +20,49 @@
     color: var(--dark-grey);
     font-weight: bold;
     margin: 5px 0 15px;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.info-test {
+    max-width: 960px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+    &-main {
+        flex: 0 0 40%;
+    }
+
+}
+.info-test-additionally {
+    padding-top: 10px;
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.input-row {
+    margin-bottom: 15px;
+}
+
+.visible {
+    &-label {
+        cursor: pointer;
+    }
+    &-label-text {
+        font-family: 'PT Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1;
+        padding: 3px 0 5px
+    }
+    &-label-icon {
+        margin-left: 5px;
+    }
+    &-checkbox {
+        display: none;
+    }
+    &-true {
+        color: var(--green);
+    }
+    &-false {
+        color: var(--red);
+    }
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -45,7 +89,6 @@
     padding: 5px 0 10px;
     border-top: 1px solid var(--grey);
 }
-
 
 .btn-submit {
     display: inline-block;
