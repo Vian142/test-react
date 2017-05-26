@@ -7,6 +7,7 @@ import createReactClass from 'create-react-class';
 import InputBlock from '../../../common/InputBlock/InputBlock';
 import StaticContent from '../../../common/StaticContent/StaticContent';
 import Question from './Question/Question';
+import axios from 'axios';
 import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -108,6 +109,11 @@ const TestAdd = createReactClass({
                 'questions'
             ]);
         console.log(infoTest);
+        axios.post('/addtest', {test: infoTest}).then((response) => {
+            console.log(response);
+        }).catch((error) => {
+            console.log('Ошибка клиента', error);
+        })
     },
     render() {
         const { title, description, category, visible, level, questions } = this.state;

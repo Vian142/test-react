@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start:dev": "cross-env HOT=true NODE_ENV='development' node server/server.js ",
+    "start:dev": "cross-env HOT=true NODE_ENV='development' nodemon server/server.js ",
     "lint": "eslint --ext .js,.jsx --cache true src/"
   },
   "repository": {
@@ -48,6 +48,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
     "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
     "postcss": "^5.2.17",
     "postcss-css-reset": "^1.0.2",
     "postcss-cssnext": "^2.10.0",

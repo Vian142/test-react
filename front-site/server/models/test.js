@@ -1,7 +1,9 @@
-import mongoose from 'mongoose';
-const Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const testSchema = new Schema({
+
+
+var testSchema = new Schema({
     Date: {type: Date, default: Date.now},
     title: {type: String, required: true},
     description: {type: String, required: true},
@@ -17,4 +19,5 @@ const testSchema = new Schema({
     ]
 });
 
-export default testSchema;
+
+module.exports = testSchema;
