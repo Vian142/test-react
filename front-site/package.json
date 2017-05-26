@@ -47,6 +47,7 @@
     "file-loader": "^0.11.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
+    "morgan": "^1.8.2",
     "postcss": "^5.2.17",
     "postcss-css-reset": "^1.0.2",
     "postcss-cssnext": "^2.10.0",

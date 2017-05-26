@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
 var compression = require('compression');
+var logger = require('morgan');
 var configApp = require('./config');
 var config = require('../webpack.config');
 ///////////////////////////////////////////////////////////////////////////////
@@ -15,7 +16,8 @@ const port = 4010;
 
 app.use('/images', express.static(path.join(__dirname, '../public/images'), {maxAge: '365 days'}));
 ///////////////////////////////////////////////////////////////////////////////
-app.usee(compression());
+app.use(logger());
+app.use(compression());
 app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
