@@ -2,11 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 var express = require('express');
 var compression = require('compression');
+var bodyParser = require('body-parser')
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var config = require('./config');
 var configApp = require('../webpack.config');
 ///////////////////////////////////////////////////////////////////////////////
+// Controllers
 var addTest = require('./controllers/test.controller');
 ///////////////////////////////////////////////////////////////////////////////
 var app = express();
@@ -15,7 +17,7 @@ var compiler = webpack(configApp);
 const port = 4010;
 ///////////////////////////////////////////////////////////////////////////////
 // Подключение к базе
-mongoose.connect(config.mongoURL + config.DB, (error) => {
+mongoose.connect(config.db.url + config.db.name, (error) => {
   if (error) {
     console.error('MongoDB error connect'); // eslint-disable-line no-console
     throw error;
@@ -29,6 +31,9 @@ app.use('/images', express.static(path.join(__dirname, '../public/images'), { ma
 
 ///////////////////////////////////////////////////////////////////////////////
 // Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json 
+app.use(bodyParser.json());
 app.use(logger());
 app.use(compression());
 app.use(require('webpack-dev-middleware')(compiler, {

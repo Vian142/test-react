@@ -1,15 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var config = require('../config');
 
-
-
-var testSchema = new Schema({
-    Date: {type: Date, default: Date.now},
-    title: {type: String, required: true},
-    description: {type: String, required: true},
-    category: {type: String, required: true},
-    level: {type: String, required: false},
-    visible: {tyle: Boolean, default: false},
+///////////////////////////////////////////////////////////////////////////////
+var testSchema = mongoose.model(config.db.tests, {
+    Date: { type: Date, default: Date.now },
+    title: { type: String, required: false },
+    description: { type: String, required: false },
+    category: { type: String, required: false },
+    level: { type: String, required: false },
+    visible: { tyle: Boolean, default: false },
     questions: [
         {
             questionTitle: String,
@@ -17,7 +17,9 @@ var testSchema = new Schema({
             answers: Array
         }
     ]
-});
+}, config.db.tests);
 
-
+///////////////////////////////////////////////////////////////////////////////
 module.exports = testSchema;
+
+///////////////////////////////////////////////////////////////////////////////

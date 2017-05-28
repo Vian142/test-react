@@ -110,7 +110,10 @@ const TestAdd = createReactClass({
             ]);
         console.log(infoTest);
         axios.post('/addtest', {test: infoTest}).then((response) => {
-            console.log(response);
+            console.log(response.data);
+            if(response.data.statusSend == true) {
+                redirect
+            }
         }).catch((error) => {
             console.log('Ошибка клиента', error);
         })

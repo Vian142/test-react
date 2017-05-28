@@ -1,8 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 module.exports = {
     "PORT": process.env.PORT || 4410,
-    "mongoURL": process.env.MONGO_URL || "mongodb://localhost:27017/",
-    "DB": "test-react"
+    "db": {
+        "url": process.env.MONGO_URL || "mongodb://localhost:27017/",
+        "name": "test-react",
+        "tests": "tests",
+        "users": "users"
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
