@@ -9,27 +9,93 @@
     border-radius: 4px;
     border: 1px solid var(--grey);
 }
+.title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark-grey);
+    line-height: 1.2;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
 
+.btn {
+    display: inline-block;
+    border: none;
+    font-family: var(--pt-sans);
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--green);
+    margin-right: 5px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &-green {
+        color: var(--white);
+        background-color: var(--green);
+        border: 1px solid var(--green);
+        &:hover {
+            color: var(--green);
+            background-color: var(--white);
+        }
+    }
+    &-blue {
+        color: var(--white);
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+        &:hover {
+            color: var(--blue);
+            background-color: var(--white);
+        }
+    }
+    &-red {
+        color: var(--white);
+        background-color: var(--red);
+        border: 1px solid var(--red);
+        &:hover {
+            color: var(--red);
+            background-color: var(--white);
+        }
+    }
+}
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .table-container {
     width: 100%;
     margin: 15px 0 5px;
     border-collapse: collapse;
+    border-radius: 4px;
 }
 .table-head {
     font-family: var(--pt-sans);
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
     line-height: 1;
     color: var(--grey);
     text-transform: uppercase;
+    th {
+        padding: 0 0 5px;
+    }
+}
+.table-item-link {
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    color: var(--dark-grey);
+    line-height: 1.2;
+    font-weight: normal;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .table-cell {    
-    border: 1px solid var(--grey);
-    padding: 15px 10px;
+    border: 1px solid rgba(0,0,0, 0.1);
+    padding: 5px 5px;
     font-family: var(--pt-sans);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
+    font-weight: normal;
 }
 .table-cell-control {
     composes: table-cell;
