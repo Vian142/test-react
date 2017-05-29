@@ -81,7 +81,7 @@ const TestAdd = createReactClass({
     addAnswer(id, text, status) {
         let answersData = _.clone(this.state.questions);
         const answer = {
-            answerText: text,
+            text: text,
             status: status
         }
         answersData[id].answers.push(answer);
@@ -90,7 +90,7 @@ const TestAdd = createReactClass({
         })
     },
     delAnswer(id, index) {
-        let answersData = this.state.questions;
+        let answersData = _.clone(this.state.questions);
         answersData[id].answers.splice(index, 1)
         this.setState({
             answers: answersData

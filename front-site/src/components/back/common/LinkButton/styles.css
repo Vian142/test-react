@@ -4,16 +4,19 @@
 
 .btn {
     display: inline-block;
-    padding: 9px 18px 6px;
-    font-family: var(--pt-sans);
-    font-size: 14px;
+    padding: 7px 10px 3px;
+    font-size: 12px;
+    line-height: 14px;
+    border-radius: 4px;
     font-weight: lighter;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--dark);
+    color: inherit;
     letter-spacing: 1px;
-    border: 1px solid black;
     transition: all 0.2s ease;
+    i {
+        margin-right: 5px;
+    }
     &:hover {
         cursor: pointer;
     }

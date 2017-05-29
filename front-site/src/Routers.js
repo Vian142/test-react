@@ -11,6 +11,7 @@ import AdminPage from './components/back/pages/AdminPage/AdminPage';
 import TestsBack from './components/back/pages/TestsBack/TestsBack';
 import StatisticsPage from './components/back/pages/StatisticsPage/StatisticsPage';
 import TestAdd from './components/back/pages/TestsBack/TestAdd/TestAdd';
+import TestInfo from './components/back/pages/TestsBack/TestInfo/TestInfo';
 import ProfilePage from './components/back/pages/Profile/ProfilePage/ProfilePage';
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -25,6 +26,7 @@ const Routers = () => (
       <Route path='/admin/profile' render={() => <LayoutBack><ProfilePage /></LayoutBack>} />
       <Route path='/admin/tests' render={() => <LayoutBack><TestsBack /></LayoutBack>} />
       <Route path='/admin/testadd' render={() => <LayoutBack><TestAdd /></LayoutBack>} />
+      <Route path='/admin/test/:id' render={() => <LayoutBack><TestInfo /></LayoutBack>} />
       <Route path='/admin/statistics' render={() => <LayoutBack><StatisticsPage /></LayoutBack>} />
     </div>
   </Router>

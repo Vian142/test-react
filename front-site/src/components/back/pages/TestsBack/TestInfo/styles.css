@@ -1,0 +1,190 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.main-wrapper {
+    max-width: 768px;
+}
+
+.info-container {
+    padding: 10px 0 5px;
+}
+
+.info-row {
+    display: block;
+    margin: 5px 0 15px;
+    &-label {
+        margin: 10px 0 1px;
+        font-family: var(--pt-sans);
+        font-size: 12px;
+        line-height: 1;
+        color: var(--grey);
+        text-transform: uppercase;
+    }
+    &-text {
+        margin: 5px 0 0;
+        font-family: var(--pt-sans);
+        font-size: 14px;
+        line-height: 1.2;
+        color: var(--dark-grey);
+        font-weight: normal;
+    }
+}
+
+.title {
+    display: block;
+    position: relative;
+    font-family: var(--pt-sans);
+    font-size: 18px;
+    color: var(--dark-grey);
+    font-weight: bold;
+    line-height: 1;
+    margin: 5px 0 10px;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.btn-container {
+    display: block;
+    padding: 5px 0 10px;
+}
+.statusTest {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 5px;
+    &-true {
+        color: var(--green);
+    }
+    &-false{
+        color: var(--red);
+    }
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    font-family: var(--pt-sans);
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--green);
+    margin-right: 5px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &-green {
+        color: var(--white);
+        background-color: var(--green);
+        border: 1px solid var(--green);
+        &:hover {
+            color: var(--green);
+            background-color: var(--white);
+        }
+    }
+    &--blue {
+        color: var(--white);
+        background-color: var(--blue);
+        border: 1px solid var(--blue);
+        &:hover {
+            color: var(--blue);
+            background-color: var(--white);
+        }
+    }
+    &--red {
+        color: var(--white);
+        background-color: var(--red);
+        border: 1px solid var(--red);
+        &:hover {
+            color: var(--red);
+            background-color: var(--white);
+        }
+    }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.tickets-container {
+    display: block;
+    padding: 15px 0 0;
+    &-title {
+        font-family: var(--pt-sans);
+        font-size: 16px;
+        line-height: 1.2;
+        color: var(--dark-grey);
+        font-weight: bold;
+    }
+}
+
+.ticket-block {
+    padding: 10px 10px;
+    margin: 0 0 20px;
+    border-radius: 4px;
+    border: 1px solid var(--grey);
+    display: flex;
+    flex-direction: row;
+    &:last-child {
+        margin-bottom: 5px;
+    }
+}
+.line-bottom {
+    position: relative;
+    margin-bottom: 20px;
+    &:after {
+        position: absolute;
+        bottom: -5px;
+        width: 50%;
+        content: '';
+        display: block;
+        height: 2px;
+        background-color: rgba(0,0,0, 0.1);
+    }
+}
+
+.ticket-title {
+    font-family: var(--pt-sans);
+    font-size: 16px;
+    color: var(--dark-grey);
+    line-height: 1.2;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.ticket-description {
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--dark-grey);
+    font-weight: normal;
+    margin: 0 0 10px;
+}
+
+.ticket-info {
+    flex: 1 0 auto;
+}
+
+.ticket-answers {
+    flex: 0 0 40%;
+}
+
+.ticket-answers-title {
+    font-family: var(--pt-sans);
+    font-size: 14px;
+    color: var(--dark-grey);
+    line-height: 1.2;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.answer-item {
+    &-text {
+        width: 100px;
+        padding: 3px 7px 3px 0;
+        font-family: var(--pt-sans);
+        font-size: 13px;
+    }
+    &-status {
+        font-size: 12px;
+    }
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
