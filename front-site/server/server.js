@@ -1,18 +1,19 @@
-var path = require('path');
-var webpack = require('webpack');
-var express = require('express');
-var compression = require('compression');
-var bodyParser = require('body-parser')
-var logger = require('morgan');
-var mongoose = require('mongoose');
-var config = require('./config');
-var configApp = require('../webpack.config');
+import path from 'path';
+import webpack from 'webpack';
+import express from 'express';
+import compression from 'compression';
+import bodyParser from 'body-parser';
+import logger from 'morgan';
+import mongoose from 'mongoose';
+import config from './config';
+import configApp from '../webpack.config';
+
 ///////////////////////////////////////////////////////////////////////////////
 // Controllers
-var addTest = require('./controllers/test.controller');
+let addTest = require('./controllers/test.controller');
 ///////////////////////////////////////////////////////////////////////////////
-var app = express();
-var compiler = webpack(configApp);
+const app = express();
+let compiler = webpack(configApp);
 
 const port = 4010;
 ///////////////////////////////////////////////////////////////////////////////
@@ -32,7 +33,6 @@ app.use('/images', express.static(path.join(__dirname, '../public/images'), { ma
 ///////////////////////////////////////////////////////////////////////////////
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json 
 app.use(bodyParser.json());
 app.use(logger());
 app.use(compression());
