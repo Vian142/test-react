@@ -25,8 +25,8 @@ const Routers = () => (
       <Route exact path='/admin' render={() => <LayoutBack><AdminPage /></LayoutBack>} />
       <Route path='/admin/profile' render={() => <LayoutBack><ProfilePage /></LayoutBack>} />
       <Route path='/admin/tests' render={() => <LayoutBack><TestsBack /></LayoutBack>} />
-      <Route path='/admin/testadd' render={() => <LayoutBack><TestAdd /></LayoutBack>} />
-      <Route path='/admin/test/:id' render={() => <LayoutBack><TestInfo /></LayoutBack>} />
+      <Route path='/admin/addtest' render={() => <LayoutBack><TestAdd /></LayoutBack>} />
+      <Route path='/admin/tests/:id' render={() => <LayoutBack><TestInfo /></LayoutBack>} />
       <Route path='/admin/statistics' render={() => <LayoutBack><StatisticsPage /></LayoutBack>} />
     </div>
   </Router>

@@ -52,11 +52,20 @@ function TestsBack() {
         <div className={styles.mainWrapper}>
             <div className={styles.btnWrapper}>
                 <LinkButton
+                    type='link-route'    
                     title='На главную'
                     icon='fa-reply'
                     url='/admin/'
                     styleClass={classnames(styles.btn, styles.btnBlue)}>
                     На главную
+                </LinkButton>
+                <LinkButton
+                    title='Добавить'
+                    type='link-route'
+                    icon='fa-plus'
+                    url='/admin/addtest'
+                    styleClass={classnames(styles.btn, styles.btnGreen)}>
+                    Добавить тест
                 </LinkButton>
             </div>
             <table className={styles.tableContainer}>
