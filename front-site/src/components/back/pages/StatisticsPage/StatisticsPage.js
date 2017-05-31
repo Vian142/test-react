@@ -1,8 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 import React from 'react';
-import { PieChart, Pie, Cell } from 'recharts';
 import StaticContent from '../../common/StaticContent/StaticContent';
 import ItemContent from '../../common/ItemContent/ItemContent';
+import BarChartBlock from '../../common/BarChartBlock/BarChartBlock';
+import PieChartBlock from '../../common/PieChartBlock/PieChartBlock';
 import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -11,10 +12,28 @@ const propsPage = {
 }
 
 const data = [
-    { name: 'Group A', value: 32 },
-    { name: 'Group B', value: 10 }];
-const colors = ['#1cc331', '#DD1C1A'];
-
+    { name: 'Page A', uv: 4000, pv: 2400, amt: 2400, color: '#C51162' },
+    { name: 'Page B', uv: 3000, pv: 1398, amt: 2210, color: '#6200EA' },
+    { name: 'Page C', uv: 2000, pv: 5600, amt: 2290, color: '#2962FF' }
+];
+const data2 = [
+    { name: 'Page A', value: 70, color: '#C51162' },
+    { name: 'Page B', value: 40, color: '#6200EA' },
+    { name: 'Page C', value: 135, color: '#2962FF' }
+];
+const dataKeys = [
+    {
+        name: 'uv',
+        color: '#ccfccf'
+    },
+    {
+        name: 'pv',
+        color: '#000000'
+    },
+    {
+        name: 'amt',
+        color: '#e4e4e6'
+    }];
 
 ///////////////////////////////////////////////////////////////////////////////
 function StatisticsPage() {
@@ -25,17 +44,27 @@ function StatisticsPage() {
                     styleClass={styles.itemStatic}
                     title='Общая статистика'>
                     <div className={styles.itemContent}>
-                        <PieChart width={240} height={300}>
-                            <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>
-                                {
-                                    data.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={colors[index]} />
-                                    ))
-                                }
-                            </Pie>
-                        </PieChart>
+                        <BarChartBlock
+                            width={400}
+                            height={300}
+                            data={data}
+                            dataKeys={dataKeys} />
                     </div>
                 </ItemContent>
+
+                <ItemContent
+                    styleClass={styles.itemStatic}
+                    title='Вторая статистика'>
+                    <div className={styles.itemContent}>
+                        <PieChartBlock
+                            width={400}
+                            height={300}
+                            data={data2}
+                            label
+                        />
+                    </div>
+                </ItemContent>
+
             </div>
         </div>
     </StaticContent>;
