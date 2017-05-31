@@ -23,6 +23,7 @@ const TestAdd = createReactClass({
             category: '',
             level: '',
             visible: false,
+            necessary: '',
             questions: [
                 {
                     questionTitle: '',
@@ -106,6 +107,7 @@ const TestAdd = createReactClass({
                 'category',
                 'level',
                 'visible',
+                'necessary',
                 'questions'
             ]);
         console.log(infoTest);
@@ -116,7 +118,7 @@ const TestAdd = createReactClass({
         })
     },
     render() {
-        const { title, description, category, visible, level, questions } = this.state;
+        const { title, description, category, visible, level, questions, necessary } = this.state;
         return <StaticContent {...propsPage}>
             <div className={styles.wrapper}>
                 <div className={styles.formWrapper}>
@@ -172,6 +174,16 @@ const TestAdd = createReactClass({
                                     max='5'
                                     step='1'
                                     value={level} />
+                            </div>
+                            <div className={styles.inputRow}>
+                                <div>Правильных ответов</div>
+                                <input
+                                    onChange={_.partial(this.setValue, 'necessary')}
+                                    type='number'
+                                    min='0'
+                                    max={questions.length || 0}
+                                    step='1'
+                                    value={necessary} />
                             </div>
                         </div>
                     </div>

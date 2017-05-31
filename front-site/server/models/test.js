@@ -9,6 +9,7 @@ var testSchema = mongoose.model(config.db.tests, {
     description: { type: String, required: false },
     category: { type: String, required: false },
     level: { type: String, required: false },
+    necessary: {type: String},
     visible: { tyle: Boolean, default: false },
     questions: [
         {
