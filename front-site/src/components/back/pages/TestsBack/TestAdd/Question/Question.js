@@ -19,14 +19,10 @@ const AddAnswerForm = createReactClass({
     },
     validateFields() {
         const addAnswer = this.props.addAnswer;
-        const id = this.props.id;
-        const text = this.state.answerText;
-        const status = this.state.answerCheck;
-        addAnswer(id, text, status);
-        this.setState({
-            answerText: '',
-            answerCheck: false
-        });
+        const id = _.clone(this.props.id);
+        const text = _.clone(this.state.answerText);
+        const status = _.clone(this.state.answerCheck);
+        return addAnswer(id, text, status);
     },
     render() {
         const { answerText, answerCheck } = this.state;
@@ -72,16 +68,6 @@ function AnswerItem(props) {
 
 ///////////////////////////////////////////////////////////////////////////////
 const Answers = createReactClass({
-    getInitialState() {
-        return {
-            answers: [
-                {
-                    text: 'Текст',
-                    statusAnswer: true
-                }
-            ]
-        }
-    },
     render() {
         const { answers, id, addAnswer, delAnswer } = this.props;
         return <div>
@@ -92,7 +78,7 @@ const Answers = createReactClass({
                 {
                     _.map(answers, (item, index) => <AnswerItem
                         id={id}
-                        text={item.answerText}
+                        text={item.text}
                         statusAnswer={item.status}
                         key={index}
                         index={index}
@@ -111,11 +97,11 @@ const Question = createReactClass({
     },
     setValue(name, event) {
         let id = this.props.id;
-        let value = event.target.value
+        let value = event.target.value;
         if(name == 'title') {
-            this.props.changeInfoQuestion(id, 'title', value)
+            this.props.changeInfoQuestion(id, 'title', value);
         } else {
-            this.props.changeInfoQuestion(id, 'description', value)
+            this.props.changeInfoQuestion(id, 'description', value);
         }
     },
     render() {

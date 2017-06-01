@@ -80,6 +80,7 @@ const TestAdd = createReactClass({
         })
     },
     addAnswer(id, text, status) {
+        console.log(id, text, status);
         let answersData = _.clone(this.state.questions);
         const answer = {
             text: text,

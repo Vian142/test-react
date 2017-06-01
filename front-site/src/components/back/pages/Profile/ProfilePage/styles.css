@@ -96,7 +96,7 @@
         padding: 3px 5px;
         font-family: var(--pt-sans);
         font-size: 14px;
-        color: var(--dar-grey);
+        color: var(--dark-grey);
         line-height: 1;
         font-weight: normal;
         &:first-child {

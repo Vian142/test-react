@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
-var Test = require('../models/test.js');
+import Test from '../models/test.js';
 
-var addTest = function(req, res) {
+export const addTest = (req, res) => {
     console.log('Запрос на добавление теста');
     if(!req.body.test.title || !req.body.test.description) {
         res.sendStatus(403).end();
@@ -16,12 +16,22 @@ var addTest = function(req, res) {
         } else {
             console.log('Сохранено');
             res.status(201).json({
-                message: "Thanks! Your request was submitted successfuly!",
+                message: "Сохранено msg!",
                 statusSend: true
             });
         }
     });
 }
 
-module.exports = addTest;
+
+export const getTests = (req, res) => {
+    Test.find().exec((err, tests) => {
+        if(err) {
+            console.log('Ошибка get - Всех тестов');
+            res.status(500).send(err);
+        }
+        res.json({ tests });
+    })
+}
+
 ///////////////////////////////////////////////////////////////////////////////
