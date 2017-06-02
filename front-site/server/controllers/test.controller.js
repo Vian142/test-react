@@ -12,7 +12,6 @@ export const addTest = (req, res) => {
     TestSave.save(function(err) {
         if(err) {
             console.log(err);
-            console.log('Ошибка сохранения');
         } else {
             console.log('Сохранено');
             res.status(201).json({
@@ -30,7 +29,7 @@ export const getTests = (req, res) => {
             console.log('Ошибка get - Всех тестов');
             res.status(500).send(err);
         }
-        res.json({ tests });
+        return res.json(tests);
     })
 }
 

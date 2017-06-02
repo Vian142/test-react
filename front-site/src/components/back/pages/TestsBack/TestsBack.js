@@ -52,14 +52,14 @@ function TableRow({ data }) {
 
 ///////////////////////////////////////////////////////////////////////////////
 const TestsBack = createReactClass({
-    componentWillMount() {
+    componentWillMount(){
         this.props.fetchTests();
     },
     renderTests(tests) {
-        console.log(tests);
         _.map(tests, (test, index) => <TableRow key={index} test={test} />)
     },
     render() {
+        const { tests } = this.props;
         return <StaticContent {...propsPage}>
             <div className={styles.mainWrapper}>
                 <div className={styles.btnWrapper}>
@@ -92,7 +92,10 @@ const TestsBack = createReactClass({
                     </thead>
                     <tbody>
                         {
-                            this.renderTests(this.props.tests)
+                            console.log('Пропсы', tests)
+                        }
+                        {
+                            this.renderTests(tests)
                         }
                     </tbody>
                 </table>

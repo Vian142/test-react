@@ -7,8 +7,7 @@ const CREATE_TEST = 'CREATE_TEST';
 export function fetchTests() {
     const request = axios({
         method: 'get',
-        url: '/tests',
-        headers: []
+        url: '/gettests'
     })
     .then(function(response) {
         console.log('response', response)

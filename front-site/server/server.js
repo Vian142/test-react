@@ -44,7 +44,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 ///////////////////////////////////////////////////////////////////////////////
 // Роутеры
 
-app.get('/tests', Tests.getTests);
+app.get('/gettests', Tests.getTests);
 
 app.post('/addtest', Tests.addTest);
 
